@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">SelfScoreApp</string>
+    <string name="drawer_open">Open drawer navigation</string>
+    <string name="drawer_close">Close drawer navigation</string>
+
+    <string-array name="left_drawer_array">
+
+        <item>Pay Bill</item>
+        <item>Credit Availability</item>
+        <item>Earn Cash</item>
+        <item>My Purchases</item>
+
+    </string-array>
+
+    <string-array name="right_drawer_array">
+
+        <item>My Profile</item>
+        <item>Settings</item>
+        <item>Log Out</item>
+
+    </string-array>
+
+    <string-array name="headers">
+
+        <item>Pay Bill</item>
+        <item>Credit Availability</item>
+        <item>Earn Cash</item>
+        <item>My Purchases</item>
+
+    </string-array>
+
+    <string-array name="subheaders">
+
+        <item>15$ payment due in</item>
+        <item>20% of credit available in</item>
+        <item>20$ cash earned</item>
+        <item>Date   Description    Amount</item>
+
+    </string-array>
+
+    <string-array name="buttons">
+
+        <item>PAY NOW</item>
+        <item>INCREASE CREDIT</item>
+        <item>INVITE FRIENDS</item>
+        <item>NONE</item>
+
+    </string-array>
+
+
+</resources>
