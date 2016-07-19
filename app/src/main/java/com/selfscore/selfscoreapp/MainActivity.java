@@ -1,5 +1,6 @@
 package com.selfscore.selfscoreapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -54,10 +55,14 @@ public class MainActivity extends AppCompatActivity {
     private String[] sub_headers_nums;
     private String[] buttons_text;
 
+    //Conext
+    Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        activity = this;
 
         //TOOLBAR setup
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -98,6 +103,13 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList_left.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                if(position == 0)
+                {
+                    //paybill
+                    Intent intent = new Intent(activity, PayBillActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });

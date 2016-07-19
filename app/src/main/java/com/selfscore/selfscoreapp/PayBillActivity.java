@@ -1,5 +1,6 @@
 package com.selfscore.selfscoreapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
@@ -37,7 +38,7 @@ public class PayBillActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_buttons, menu);
         //need to change menu button icon to app icon
         MenuItem menuItem = menu.findItem(R.id.user_account);
-        menuItem.setIcon(R.mipmap.sslogo);
+        menuItem.setIcon(R.mipmap.sslogofinal);
 
         return true;
     }
@@ -49,6 +50,11 @@ public class PayBillActivity extends AppCompatActivity {
         {
             case android.R.id.home:
                 onBackPressed();
+                return true;
+
+            case R.id.user_account:
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
                 return true;
 
             default:

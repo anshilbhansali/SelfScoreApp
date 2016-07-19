@@ -3,9 +3,11 @@ package com.selfscore.selfscoreapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,9 +32,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     // you provide access to all the views for a data item in a view holder
     public class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
+        public View v;
         public TextView header;
         public TextView subheader;
         public TextView subheader_num;
+        public LinearLayout subheader_layout;
         public Button button;
         public View headerClick;
         public LinearLayout content;
@@ -41,9 +45,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder(View v, int viewType) {
             super(v);
 
+            this.v = v;
             this.header = (TextView) v.findViewById(R.id.header_text);
             this.subheader = (TextView) v.findViewById(R.id.subheader_text);
             this.subheader_num = (TextView) v.findViewById(R.id.subheader_number);
+            this.subheader_layout = (LinearLayout) v.findViewById(R.id.subheader_layout);
             this.button = (Button) v.findViewById(R.id.button_text);
 
             this.headerClick = v.findViewById(R.id.header_click);
@@ -67,7 +73,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             }
             else if(viewType == 2)
             {
-                //credit availability
+                //earn cash
+                LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) content.getLayoutParams();
+                p.setMargins(0,10,5,5); //decrease top and bottom margins, to adjust button
+
                 content_layout = inflater.inflate(R.layout.earn_cash_content, null);
                 content.addView(content_layout);
 
@@ -77,7 +86,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 //My Purchases
                 subheader.setVisibility(View.GONE);
                 subheader_num.setVisibility(View.GONE);
+                subheader_layout.setVisibility(View.GONE);
                 button.setVisibility(View.GONE);
+
+                content_layout = inflater.inflate(R.layout.my_purchases_content, null);
+
+                //change right margin
+                LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) content.getLayoutParams();
+                p.setMargins(0,0,0,0);
+                content.setLayoutParams(p);
+                content.setGravity(Gravity.NO_GRAVITY);
+
+
+                content.addView(content_layout);
             }
 
             setListeners();
@@ -86,7 +107,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public void setListeners()
         {
-            headerClick.setOnClickListener(new View.OnClickListener() {
+            v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TextView h = (TextView) v.findViewById(R.id.header_text);

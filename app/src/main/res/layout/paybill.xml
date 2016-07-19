@@ -210,7 +210,7 @@
         android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="10dp">
 
         <!-- empty view -->
         <View
@@ -248,7 +248,11 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/paynow"/>
+                android:src="@mipmap/paynow"
+                android:adjustViewBounds="true"
+                android:background="@color/navy100"
+
+                />
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
