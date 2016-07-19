@@ -3,6 +3,8 @@ package com.selfscore.selfscoreapp;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,8 +51,10 @@ public class DrawerItemViewAdapter extends ArrayAdapter<RowItem> {
             holder = (ViewHolder) convertView.getTag();
 
         holder.txtTitle.setText(rowItem.getTitle());
-        holder.imageView.setImageResource(rowItem.getImageId());
-        holder.imageView.setBackgroundColor(Color.WHITE);
+        holder.imageView.setImageDrawable(context.getResources().getDrawable(rowItem.getImageId()));
+        //holder.imageView.setBackgroundResource(rowItem.getImageId());
+
+        holder.imageView.setBackgroundColor(context.getResources().getColor(R.color.midnight));
         holder.txtTitle.setTextColor(Color.WHITE);
 
         return convertView;

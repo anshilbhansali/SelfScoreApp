@@ -5,15 +5,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+
+
         <android.support.v7.widget.Toolbar
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/midnight"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:titleTextColor="@color/colorWhite"/>
+            android:titleTextColor="@color/colorWhite"
+            android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/header_logo"
+                    android:visibility="visible">
+
+                        <TextView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@mipmap/sslogo"
+                            android:layout_marginBottom="10dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="5dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Self"
+                                    android:layout_marginLeft="0dp"
+                                    android:textSize="25sp"
+                                    android:textColor="#ffffff"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Score"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/teal" />
+
+                        </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+
 
 
 </RelativeLayout>

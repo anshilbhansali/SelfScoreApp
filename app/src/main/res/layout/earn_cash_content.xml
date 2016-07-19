@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get "
+            android:textColor="@color/navy100"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$10 "
+            android:textColor="@color/navy100"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="for each invited friend who qualifies"
+            android:textColor="@color/navy100"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginRight="110dp"
+        android:gravity="left">
+
+        <include layout="@layout/text_bubble"></include>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_green"
+            android:textColor="#ffffff"
+            android:shadowColor="#31fe03" />
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_green"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+        <TextView
+            android:layout_width="@dimen/person_icon_width"
+            android:layout_height="@dimen/person_icon_height"
+            android:background="@mipmap/person_grey"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingRight="5dp"
+            android:background="@color/navy30"
+            >
+            <TextView
+                android:layout_width="@dimen/person_icon_width"
+                android:layout_height="@dimen/person_icon_height"
+                android:background="@mipmap/person_grey"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+$100"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bonus"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

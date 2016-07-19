@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <com.github.lzyzsd.circleprogress.DonutProgress
+        android:layout_marginLeft="0dp"
+        android:id="@+id/donut_progress"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        custom:donut_progress="5"
+        custom:donut_max="100"
+        custom:donut_text="2 days"
+        custom:donut_text_size="0sp"
+        custom:donut_suffix_text="days"
+        custom:donut_text_color="@color/colorWhite"
+        custom:donut_background_color="@color/brick"
+        custom:donut_finished_color="@color/brick"
+        android:rotation="270"
+        />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/white_ring"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="18dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/colorWhite"
+            android:layout_marginLeft="14dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="days"
+            android:textColor="@color/colorWhite"
+            android:textSize="11sp"
+            android:layout_marginLeft="9dp"
+            android:paddingBottom="0dp"
+            android:layout_marginBottom="0dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

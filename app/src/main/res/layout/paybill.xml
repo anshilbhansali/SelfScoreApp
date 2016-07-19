@@ -20,7 +20,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginLeft="90dp"
             android:textStyle="bold"
-            android:textColor="@color/theme_blue" />
+            android:textColor="@color/midnight" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,18 +29,25 @@
             android:textSize="20sp"
             android:layout_gravity="center"
             android:layout_marginTop="0dp"
-            android:textColor="@color/theme_blue"
-            />
+            android:textColor="@color/midnight"
+            android:layout_marginBottom="0dp"/>
 
     </LinearLayout>
 
 
 
     <!--placeholder view, will change later-->
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="130dp"
-        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_margin="5dp">
+
+        <include layout="@layout/paybill_content"></include>
+
+    </LinearLayout>
+
 
     <!--MINIMUM DUE-->
     <LinearLayout
@@ -54,7 +61,7 @@
             android:layout_height="wrap_content"
             android:text="Minimum Due"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/theme_blue" />
+            android:textColor="@color/midnight" />
 
         <!-- empty view -->
         <View
@@ -68,7 +75,7 @@
             android:layout_height="wrap_content"
             android:text="15$"
             android:layout_gravity="right"
-            android:textColor="@color/theme_blue"
+            android:textColor="@color/midnight"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -85,7 +92,7 @@
             android:layout_height="wrap_content"
             android:text="Last statement balance"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/theme_blue" />
+            android:textColor="@color/midnight" />
 
         <!-- empty view -->
         <View
@@ -99,7 +106,7 @@
             android:layout_height="wrap_content"
             android:text="350$"
             android:layout_gravity="right"
-            android:textColor="@color/theme_blue"
+            android:textColor="@color/midnight"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -116,7 +123,7 @@
             android:layout_height="wrap_content"
             android:text="Current balance"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/theme_blue" />
+            android:textColor="@color/midnight" />
 
         <!-- empty view -->
         <View
@@ -130,7 +137,7 @@
             android:layout_height="wrap_content"
             android:text="400$"
             android:layout_gravity="right"
-            android:textColor="@color/theme_blue"
+            android:textColor="@color/midnight"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -148,7 +155,7 @@
             android:layout_height="wrap_content"
             android:text="Available credit"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/theme_blue" />
+            android:textColor="@color/midnight" />
 
         <!-- empty view -->
         <View
@@ -162,7 +169,7 @@
             android:layout_height="wrap_content"
             android:text="100$"
             android:layout_gravity="right"
-            android:textColor="@color/theme_blue"
+            android:textColor="@color/midnight"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -179,7 +186,7 @@
             android:layout_height="wrap_content"
             android:text="Credit Limit"
             android:layout_marginLeft="50dp"
-            android:textColor="@color/theme_blue" />
+            android:textColor="@color/midnight" />
 
         <!-- empty view -->
         <View
@@ -193,7 +200,7 @@
             android:layout_height="wrap_content"
             android:text="500$"
             android:layout_gravity="right"
-            android:textColor="@color/theme_blue"
+            android:textColor="@color/midnight"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -234,13 +241,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@color/theme_blue"
+            android:background="@color/navy100"
             android:layout_marginRight="3dp">
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:src="@mipmap/paynow"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
@@ -257,12 +265,13 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1"
-            android:background="@color/theme_blue">
+            android:background="@color/navy100">
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:src="@mipmap/autopay"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"

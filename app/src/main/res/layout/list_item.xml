@@ -10,15 +10,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:layout_marginLeft="10dp">
+        android:layout_marginLeft="5dp">
 
         <ImageView
             android:id="@+id/icon"
-            android:layout_width="40dp"
+            android:layout_width="60dp"
             android:layout_height="40dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:background="#e98080" />
+            android:background="#e98080"
+            android:src="@mipmap/logout_icon"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"/>
 
         <TextView
             android:id="@+id/title"
@@ -28,9 +31,10 @@
             android:paddingBottom="10dp"
             android:textSize="16dp"
             android:text="Drawer text"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="7dp"
-            android:textColor="#080707" />
+            android:textColor="#080707"
+            />
 
 
     </RelativeLayout>
@@ -38,6 +42,6 @@
     <TextView
         android:layout_width="400dp"
         android:layout_height="2dp"
-        android:background="#4ba3f7" />
+        android:background="@color/ocean" />
 
 </LinearLayout>

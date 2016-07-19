@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+
+    <com.github.lzyzsd.circleprogress.DonutProgress
+        android:layout_marginLeft="0dp"
+        android:id="@+id/donut_progress"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        custom:donut_progress="15"
+        custom:donut_max="100"
+        custom:donut_text="2 days"
+        custom:donut_text_size="0sp"
+        custom:donut_suffix_text="days"
+        custom:donut_text_color="@color/colorWhite"
+        custom:donut_background_color="@color/colorWhite"
+        custom:donut_finished_color="@color/sky"
+        android:rotation="-140"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$500"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:textColor="@color/navy100"
+            android:layout_marginLeft="0dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="limit"
+            android:textColor="@color/navy100"
+            android:layout_marginLeft="5dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

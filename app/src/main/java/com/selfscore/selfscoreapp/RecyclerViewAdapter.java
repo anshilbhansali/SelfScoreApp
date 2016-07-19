@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -19,6 +21,7 @@ import android.widget.TextView;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     private String[] header_names;
     private String[] sub_headers;
+    private String[] sub_headers_nums;
     private String[] buttons_text;
     public Context context;
 
@@ -29,17 +32,53 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         // each data item is just a string in this case
         public TextView header;
         public TextView subheader;
+        public TextView subheader_num;
         public Button button;
         public View headerClick;
+        public LinearLayout content;
+        View content_layout;
 
-        public ViewHolder(View v) {
+        public ViewHolder(View v, int viewType) {
             super(v);
 
             this.header = (TextView) v.findViewById(R.id.header_text);
             this.subheader = (TextView) v.findViewById(R.id.subheader_text);
+            this.subheader_num = (TextView) v.findViewById(R.id.subheader_number);
             this.button = (Button) v.findViewById(R.id.button_text);
 
             this.headerClick = v.findViewById(R.id.header_click);
+
+            this.content = (LinearLayout) v.findViewById(R.id.content_cardview);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+
+            if(viewType == 0)
+            {
+                //pay bill
+                content_layout = inflater.inflate(R.layout.paybill_content, null);
+                content.addView(content_layout);
+            }
+            else if(viewType == 1)
+            {
+                //credit availability
+                content_layout = inflater.inflate(R.layout.credit_avail_content, null);
+                content.addView(content_layout);
+
+            }
+            else if(viewType == 2)
+            {
+                //credit availability
+                content_layout = inflater.inflate(R.layout.earn_cash_content, null);
+                content.addView(content_layout);
+
+            }
+            else if (viewType == 3)
+            {
+                //My Purchases
+                subheader.setVisibility(View.GONE);
+                subheader_num.setVisibility(View.GONE);
+                button.setVisibility(View.GONE);
+            }
 
             setListeners();
 
@@ -66,11 +105,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecyclerViewAdapter(Context context, String[] header_names, String[] sub_headers, String[] button_text) {
+    public RecyclerViewAdapter(Context context, String[] header_names, String[] sub_headers, String[] sub_headers_nums, String[] button_text) {
         this.header_names = header_names;
         this.sub_headers = sub_headers;
+        this.sub_headers_nums = sub_headers_nums;
         this.buttons_text = button_text;
         this.context = context;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     // Create new views (invoked by the layout manager)
@@ -82,7 +127,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View v = inflater.inflate(R.layout.cardview, parent, false);
 
         //root view v MUST be passed in constructor of vh
-        ViewHolder vh = new ViewHolder(v);
+        ViewHolder vh = new ViewHolder(v, viewType);
         return vh;
     }
 
@@ -91,8 +136,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
         holder.header.setText(header_names[position]);
         holder.subheader.setText(sub_headers[position]);
+        holder.subheader_num.setText(sub_headers_nums[position]);
         holder.button.setText(buttons_text[position]);
 
     }

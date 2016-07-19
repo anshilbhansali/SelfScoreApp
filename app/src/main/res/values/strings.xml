@@ -31,10 +31,19 @@
 
     <string-array name="subheaders">
 
-        <item>15$ payment due in</item>
-        <item>20% of credit available in</item>
-        <item>20$ cash earned</item>
-        <item>Date   Description    Amount</item>
+        <item>payment due in</item>
+        <item>of credit available in</item>
+        <item>cash earned</item>
+        <item></item>
+
+    </string-array>
+
+    <string-array name="subheaders_nums">
+
+        <item>$15</item>
+        <item>20%</item>
+        <item>$20</item>
+        <item></item>
 
     </string-array>
 

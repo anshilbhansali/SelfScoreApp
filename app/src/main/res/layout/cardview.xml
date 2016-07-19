@@ -11,7 +11,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card_view"
     android:layout_gravity="center"
-    android:layout_width="320dp"
+    android:layout_width="340dp"
     android:layout_height="200dp"
     card_view:cardCornerRadius="4dp"
 
@@ -34,7 +34,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="#01198c" />
+                    android:background="@color/navy100" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,29 +74,61 @@
             </RelativeLayout>
 
 
-
-            <TextView
-                android:id="@+id/subheader_text"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Subheading"
-                android:layout_gravity="center"
-                />
+                android:orientation="horizontal"
+                android:layout_marginTop="7dp"
+                android:layout_gravity="center">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                />
+                <TextView
+                    android:id="@+id/subheader_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:textColor="@color/navy100"
+                    android:text="$15"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/subheader_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:textColor="@color/navy100"
+                    android:text="Subheading"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <!--content-->>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/content_cardview">
+
+
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/button_text"
-                android:layout_width="120dp"
+                android:layout_width="190dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:text="BUTTON"
-                android:textColor="#01198c"
+                android:textColor="@color/navy100"
                 android:background="@drawable/mybutton"
-
                 android:shadowColor="#dfdfdf" />
 
 

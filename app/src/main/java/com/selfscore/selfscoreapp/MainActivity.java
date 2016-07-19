@@ -1,8 +1,10 @@
 package com.selfscore.selfscoreapp;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.selfscore.selfscoreapp.DrawerItemViewAdapter.*;
+import static com.selfscore.selfscoreapp.R.color.midnight;
 
 /* created by Anshil Bhansali on 7/7/16 */
 
@@ -40,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private List<RowItem> rowItems_right;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
-    private ActionBarDrawerToggle mDrawerToggle_right;
 
 
     //RECYCLER VIEW
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
     private String[] header_names;
     private String[] sub_headers;
+    private String[] sub_headers_nums;
     private String[] buttons_text;
 
     @Override
@@ -58,14 +61,14 @@ public class MainActivity extends AppCompatActivity {
 
         //TOOLBAR setup
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        myToolbar.setTitleTextColor(Color.WHITE);
+        //myToolbar.setTitleTextColor(Color.WHITE);
+        //myToolbar.setLogo(R.mipmap.sslogo);
         setSupportActionBar(myToolbar);
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("              SelfScore");
+        actionBar.setTitle("");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.BLUE));
-
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.midnight)));
 
         //DRAWER SETUP
         mDrawerTitles_left = getResources().getStringArray(R.array.left_drawer_array);
@@ -89,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList_left.setAdapter(adapter_left);
         mDrawerList_right.setAdapter(adapter_right);
 
-        mDrawerList_left.setBackgroundColor(Color.BLUE);
-        mDrawerList_right.setBackgroundColor(Color.BLUE);
+        mDrawerList_left.setBackgroundColor(getResources().getColor(R.color.midnight));
+        mDrawerList_right.setBackgroundColor(getResources().getColor(R.color.midnight));
 
         mDrawerList_left.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -119,35 +122,39 @@ public class MainActivity extends AppCompatActivity {
         //connect view to adapter
         header_names = getResources().getStringArray(R.array.headers);
         sub_headers = getResources().getStringArray(R.array.subheaders);
+        sub_headers_nums = getResources().getStringArray(R.array.subheaders_nums);
         buttons_text = getResources().getStringArray(R.array.buttons);
-        mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, buttons_text);
+        mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
         mRecyclerView.setAdapter(mAdapter);
-
-
-
 
 
     }
 
     private void addDatatoDrawers()
     {
-        images_left = new ArrayList<Integer>();
-        images_right = new ArrayList<Integer>();
+        images_left = new ArrayList<>();
+        images_right = new ArrayList<>();
 
         rowItems_left = new ArrayList<RowItem>();
         rowItems_right = new ArrayList<RowItem>();
 
+        images_left.add(R.mipmap.paybill_icon);
+        images_left.add(R.mipmap.creditavail_icon);
+        images_left.add(R.mipmap.earncash_icon);
+        images_left.add(R.mipmap.mypurchases_icon);
+
         for (int i = 0; i < mDrawerTitles_left.length; i++) {
-            //default start icons
-            images_left.add(android.R.drawable.btn_star);
 
             RowItem item = new RowItem(images_left.get(i), mDrawerTitles_left[i]);
             rowItems_left.add(item);
         }
 
+        images_right.add(R.mipmap.myprofile_icon);
+        images_right.add(R.mipmap.settings_icon);
+        images_right.add(R.mipmap.logout_icon);
+
+
         for (int i = 0; i < mDrawerTitles_right.length; i++) {
-            //default start icons
-            images_right.add(android.R.drawable.btn_star);
 
             RowItem item = new RowItem(images_right.get(i), mDrawerTitles_right[i]);
             rowItems_right.add(item);
