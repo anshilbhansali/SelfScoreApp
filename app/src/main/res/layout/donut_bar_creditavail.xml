@@ -26,12 +26,12 @@
 
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="22dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,11 +47,12 @@
             android:layout_height="wrap_content"
             android:text="limit"
             android:textColor="@color/navy100"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
             />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
