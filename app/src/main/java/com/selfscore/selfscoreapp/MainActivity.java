@@ -117,6 +117,12 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList_right.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 2)
+                {
+                    //log out
+                    Intent intent = new Intent(activity, LoginActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });
