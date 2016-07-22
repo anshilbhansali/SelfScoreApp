@@ -58,6 +58,12 @@ public class LoginActivity extends AppCompatActivity{
     private View mProgressView;
     private View mLoginFormView;
 
+    //Credentials
+    String username, password;
+
+    //model
+    Model model;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +83,8 @@ public class LoginActivity extends AppCompatActivity{
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+        model = ((SelfScoreApplication) this.getApplication()).getModel();
     }
 
 
@@ -96,8 +104,8 @@ public class LoginActivity extends AppCompatActivity{
         mPasswordView.setError(null);
 
         // Store values at the time of the login attempt.
-        String username = mUserNameView.getText().toString();
-        String password = mPasswordView.getText().toString();
+        username = mUserNameView.getText().toString();
+        password = mPasswordView.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -237,12 +245,20 @@ public class LoginActivity extends AppCompatActivity{
             mAuthTask = null;
             showProgress(false);
         }
+
+
     }
 
     public void goToDashboard()
     {
         Intent intent = new Intent(this, MainActivity.class);
+        model.setUsername(username);
+        model.setPassword(password);
+        intent.putExtra("ACTIVITY_NAME", "Login");
         startActivity(intent);
+
     }
+
+
 }
 

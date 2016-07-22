@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +34,6 @@ import static com.selfscore.selfscoreapp.R.color.midnight;
 public class MainActivity extends AppCompatActivity {
 
     //DRAWERS
-    private String[] mDrawerTitles_left;
-    private String[] mDrawerTitles_right;
-    //this should be the icons for drawer item
-    private List<Integer> images_left = null;
-    private List<Integer> images_right = null;
     private ListView mDrawerList_left;
     private ListView mDrawerList_right;
     private List<RowItem> rowItems_left;
@@ -58,16 +54,23 @@ public class MainActivity extends AppCompatActivity {
     //Conext
     Activity activity;
 
+    //model
+    Model model;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         activity = this;
 
+        //get Model data
+        model = ((SelfScoreApplication) this.getApplication()).getModel();
+        Bundle extras = getIntent().getExtras();
+        if(extras != null && extras.get("ACTIVITY_NAME").equals("Login"))
+            Toast.makeText(MainActivity.this, "Welcome "+model.getUsername(), Toast.LENGTH_LONG).show();
+
         //TOOLBAR setup
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        //myToolbar.setTitleTextColor(Color.WHITE);
-        //myToolbar.setLogo(R.mipmap.sslogo);
         setSupportActionBar(myToolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("");
@@ -76,16 +79,14 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.midnight)));
 
         //DRAWER SETUP
-        mDrawerTitles_left = getResources().getStringArray(R.array.left_drawer_array);
-        mDrawerTitles_right = getResources().getStringArray(R.array.right_drawer_array);
+        rowItems_left = model.getLeftRowItems();
+        rowItems_right = model.getRightRowItems();
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         mDrawerList_left = (ListView) findViewById(R.id.left_drawer);
         mDrawerList_right = (ListView) findViewById(R.id.right_drawer);
 
-        //ADD ITEMS TO DRAWER row items
-        addDatatoDrawers();
 
         //Set the ADAPTER for the DRAWER list view
         DrawerItemViewAdapter adapter_left = new DrawerItemViewAdapter(this,
@@ -138,46 +139,16 @@ public class MainActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         //connect view to adapter
-        header_names = getResources().getStringArray(R.array.headers);
-        sub_headers = getResources().getStringArray(R.array.subheaders);
-        sub_headers_nums = getResources().getStringArray(R.array.subheaders_nums);
-        buttons_text = getResources().getStringArray(R.array.buttons);
+        header_names = model.getCard_headers();
+        sub_headers = model.getCard_subheaders();
+        sub_headers_nums = model.getCard_subheader_nums();
+        buttons_text = model.getCard_buttons();
         mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
         mRecyclerView.setAdapter(mAdapter);
 
 
     }
 
-    private void addDatatoDrawers()
-    {
-        images_left = new ArrayList<>();
-        images_right = new ArrayList<>();
-
-        rowItems_left = new ArrayList<RowItem>();
-        rowItems_right = new ArrayList<RowItem>();
-
-        images_left.add(R.mipmap.paybill_icon);
-        images_left.add(R.mipmap.creditavail_icon);
-        images_left.add(R.mipmap.earncash_icon);
-        images_left.add(R.mipmap.mypurchases_icon);
-
-        for (int i = 0; i < mDrawerTitles_left.length; i++) {
-
-            RowItem item = new RowItem(images_left.get(i), mDrawerTitles_left[i]);
-            rowItems_left.add(item);
-        }
-
-        images_right.add(R.mipmap.myprofile_icon);
-        images_right.add(R.mipmap.settings_icon);
-        images_right.add(R.mipmap.logout_icon);
-
-
-        for (int i = 0; i < mDrawerTitles_right.length; i++) {
-
-            RowItem item = new RowItem(images_right.get(i), mDrawerTitles_right[i]);
-            rowItems_right.add(item);
-        }
-    }
 
     private void setupDrawers() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
