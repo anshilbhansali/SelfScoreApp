@@ -1,12 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
+    <style name="RealTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--set drawer icon color to white-->
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+
+        <item name="android:homeAsUpIndicator">@color/colorWhite</item>
+
+    </style>
+
+
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
 
     <style name="MyTheme.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">@color/colorWhite</item>
@@ -26,5 +37,11 @@
         <attr name="donut_suffix_text" format="string"/>
         <attr name="donut_background_color" format="color"/>
     </declare-styleable>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/colorWhite</item>
+    </style>
+
+
 
 </resources>

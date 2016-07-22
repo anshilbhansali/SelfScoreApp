@@ -2,6 +2,8 @@ package com.selfscore.selfscoreapp;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -40,8 +42,14 @@ public class PayBillActivity extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.user_account);
         menuItem.setIcon(R.mipmap.sslogofinal);
 
+        //back/home button
+        menuItem = menu.findItem(android.R.id.home);
+        //Log.v("HOMEBUTTON_ICON:", String.valueOf(menuItem));
+        //menuItem.getIcon().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
+
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
