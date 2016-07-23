@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.selfscore.selfscoreapp.LoginActivity">
+    tools:context="com.selfscore.selfscoreapp.LoginActivity"
+    android:background="@color/navy100">
 
     <!-- Login progress -->
     <ProgressBar
@@ -17,7 +18,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:layout_gravity="center"
+        />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -32,47 +35,108 @@
             android:gravity="center"
             android:layout_gravity="center">
 
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_weight="1">
+
+                <include layout="@layout/selfscore_header"></include>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/navy30"
+                android:text="Log In"
+                android:textSize="17sp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:visibility="visible"/>
+
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="50dp"
+                android:background="@color/colorWhite"
+                android:layout_marginBottom="20dp">
 
-                <AutoCompleteTextView
+                <EditText
                     android:id="@+id/username"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/prompt_username"
-                    android:inputType="textEmailAddress"
+                    android:inputType="text"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:background="@color/colorWhite"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="50dp"
+                android:background="@color/colorWhite">
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:hint="@string/prompt_password"
-                    android:imeActionId="@+id/login"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:background="@color/colorWhite"/>
+
 
             </android.support.design.widget.TextInputLayout>
+
+
+
 
             <Button
                 android:id="@+id/email_sign_in_button"
                 style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
+                android:background="@drawable/mybutton_yellow"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/pumpkin"
+                android:text="Unable to log in?"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/navy30"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New to SelfScore?"
+                android:layout_marginTop="35dp"
+                android:textSize="22sp"
+                android:textColor="@color/navy20"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/apply_now_button"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Apply Now"
+                android:textSize="25sp"
+                android:textStyle="normal"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/my_button_applynow" />
 
         </LinearLayout>
     </ScrollView>

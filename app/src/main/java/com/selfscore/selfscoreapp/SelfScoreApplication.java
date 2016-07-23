@@ -12,8 +12,6 @@ public class SelfScoreApplication extends Application {
 
     public Model getModel(){return model;}
 
-    public void setModel(Model model) {
-        this.model = model;
-    }
+    public void setModel(Model model) {this.model = model;}
 
 }

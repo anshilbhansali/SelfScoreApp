@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity{
     private UserLoginTask mAuthTask = null;
 
     // UI references.
-    private AutoCompleteTextView mUserNameView;
+    private EditText mUserNameView;
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
@@ -69,20 +69,21 @@ public class LoginActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Set up the login form.
-        mUserNameView = (AutoCompleteTextView) findViewById(R.id.username);
-
+        mUserNameView = (EditText) findViewById(R.id.username);
         mPasswordView = (EditText) findViewById(R.id.password);
+        mLoginFormView = findViewById(R.id.login_form);
+        mLoginFormView.requestFocus();
+        mProgressView = findViewById(R.id.login_progress);
 
-        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-        mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        Button SignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        SignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
             }
         });
 
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
+
 
         model = ((SelfScoreApplication) this.getApplication()).getModel();
     }

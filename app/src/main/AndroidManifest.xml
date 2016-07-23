@@ -20,9 +20,11 @@
 
         <activity android:name=".PayBillActivity" />
 
+        <!--adjustNothing is to prevent focus on edit text automatically-->
         <activity
             android:name=".LoginActivity"
-            android:label="SelfScore">
+            android:label="SelfScore"
+            android:windowSoftInputMode="adjustNothing">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
