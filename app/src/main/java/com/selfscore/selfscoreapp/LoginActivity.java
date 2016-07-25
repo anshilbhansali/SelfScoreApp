@@ -3,6 +3,7 @@ package com.selfscore.selfscoreapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -64,6 +65,9 @@ public class LoginActivity extends AppCompatActivity{
     //model
     Model model;
 
+    //Activity
+    Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,12 +78,22 @@ public class LoginActivity extends AppCompatActivity{
         mLoginFormView = findViewById(R.id.login_form);
         mLoginFormView.requestFocus();
         mProgressView = findViewById(R.id.login_progress);
+        activity = this;
 
         Button SignInButton = (Button) findViewById(R.id.email_sign_in_button);
         SignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 attemptLogin();
+            }
+        });
+
+        Button applyNowButton = (Button) findViewById(R.id.apply_now_button);
+        applyNowButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, CreateAccountActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -118,7 +132,7 @@ public class LoginActivity extends AppCompatActivity{
             cancel = true;
         }
 
-        // Check for a valid email address.
+        // Check for a valid username.
         if (TextUtils.isEmpty(username)) {
             mUserNameView.setError(getString(R.string.error_field_required));
             focusView = mUserNameView;
@@ -225,6 +239,8 @@ public class LoginActivity extends AppCompatActivity{
             }
 
             // TODO: register the new account here.
+            //Check if username matches password
+
             return true;
         }
 
@@ -234,7 +250,7 @@ public class LoginActivity extends AppCompatActivity{
             showProgress(false);
 
             if (success) {
-                goToDashboard();
+                goToSecQ();
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
@@ -250,9 +266,9 @@ public class LoginActivity extends AppCompatActivity{
 
     }
 
-    public void goToDashboard()
+    public void goToSecQ()
     {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, QuestionAuthenticationActivity.class);
         model.setUsername(username);
         model.setPassword(password);
         intent.putExtra("ACTIVITY_NAME", "Login");

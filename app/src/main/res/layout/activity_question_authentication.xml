@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.selfscore.selfscoreapp.LoginActivity"
+    android:background="@color/navy100">
+
+    <!-- Login progress -->
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="80dp">
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:layout_weight="1">
+
+                <include layout="@layout/selfscore_header"></include>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="Please answer this question:"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:layout_marginTop="70dp"
+                android:layout_marginBottom="30dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sec_question"
+                android:text="What is the ......"
+                android:textColor="@color/navy30"
+                android:layout_marginBottom="10dp"
+                android:textSize="15sp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorWhite">
+
+                <EditText
+                    android:id="@+id/sec_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Answer"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:background="@color/colorWhite"
+                    android:paddingLeft="10dp"/>
+
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+
+            <Button
+                android:id="@+id/continue_button"
+                style="?android:textAppearanceSmall"
+                android:background="@drawable/mybutton_yellow"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Continue"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"/>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
