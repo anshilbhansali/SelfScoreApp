@@ -111,6 +111,12 @@ public class CreateAccountActivity extends AppCompatActivity {
         View focusView = null;
 
 
+        //check if password is created
+        if (TextUtils.isEmpty(password)) {
+            create_password.setError(getString(R.string.error_field_required));
+            focusView = create_password;
+            cancel = true;
+        }
 
         // Check for a valid username.
         if (TextUtils.isEmpty(username)) {
@@ -123,6 +129,7 @@ public class CreateAccountActivity extends AppCompatActivity {
             focusView = create_username;
             cancel = true;
         }
+
 
         // Check for a valid password, if the user entered one.
         if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
@@ -139,22 +146,30 @@ public class CreateAccountActivity extends AppCompatActivity {
             cancel = true;
         }
 
-        //check sec question
+        //CHECK FOR SEC QUESTION
         if(question.equals("Select a security question..."))
         {
             Toast.makeText(CreateAccountActivity.this, "Please select a security question", Toast.LENGTH_SHORT).show();
-            Log.v("FOCUS VIEW",focusView.toString());
-            if(focusView == null)
+            //Log.v("FOCUS VIEW REQUESTED",focusView.toString());
+            if(!cancel)
+            {
+                //change focus view only when username password info is validated,
+                //otherwise leave focusview as is
                 focusView = mLoginFormView;
-            cancel = true;
+                cancel = true;
+            }
+
         }
 
         if(TextUtils.isEmpty(answer))
         {
             sec_answer.setError("Field is required");
-            if(focusView == null)
+            if(!cancel)
+            {
                 focusView = sec_answer;
-            cancel = true;
+                cancel = true;
+            }
+
         }
 
         if (cancel) {
