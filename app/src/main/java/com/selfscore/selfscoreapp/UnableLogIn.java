@@ -53,6 +53,7 @@ public class UnableLogIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, EmailSent.class);
+                intent.putExtra("getUsernameMsg","Check your inbox for your username.");
                 startActivity(intent);
             }
         });
@@ -61,6 +62,7 @@ public class UnableLogIn extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, EmailSent.class);
+                intent.putExtra("getPasswordMsg","Check your inbox for a password reset link.");
                 startActivity(intent);
             }
         });

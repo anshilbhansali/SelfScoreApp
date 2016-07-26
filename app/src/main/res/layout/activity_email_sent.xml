@@ -70,7 +70,8 @@
                 android:textColor="@color/navy30"
                 android:layout_marginBottom="10dp"
                 android:textSize="15sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:id="@+id/check_message"/>
 
 
 
