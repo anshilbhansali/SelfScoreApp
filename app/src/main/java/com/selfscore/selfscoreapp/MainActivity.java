@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if(position == 0)
                 {
-                    //paybill
+                    //activity_paybill
                     Intent intent = new Intent(activity, PayBillActivity.class);
                     startActivity(intent);
                 }

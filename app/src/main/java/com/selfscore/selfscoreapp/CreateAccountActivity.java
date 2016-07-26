@@ -110,12 +110,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         cancel = false;
         View focusView = null;
 
-        // Check for a valid password, if the user entered one.
-        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
-            create_password.setError(getString(R.string.error_invalid_password));
-            focusView = create_password;
-            cancel = true;
-        }
+
 
         // Check for a valid username.
         if (TextUtils.isEmpty(username)) {
@@ -126,6 +121,13 @@ public class CreateAccountActivity extends AppCompatActivity {
         else if (!isUsernameValid(username)) {
             create_username.setError("Username must be 8 characters minimum");
             focusView = create_username;
+            cancel = true;
+        }
+
+        // Check for a valid password, if the user entered one.
+        if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+            create_password.setError(getString(R.string.error_invalid_password));
+            focusView = create_password;
             cancel = true;
         }
 
@@ -141,20 +143,24 @@ public class CreateAccountActivity extends AppCompatActivity {
         if(question.equals("Select a security question..."))
         {
             Toast.makeText(CreateAccountActivity.this, "Please select a security question", Toast.LENGTH_SHORT).show();
-            focusView = mLoginFormView;
+            Log.v("FOCUS VIEW",focusView.toString());
+            if(focusView == null)
+                focusView = mLoginFormView;
             cancel = true;
         }
 
         if(TextUtils.isEmpty(answer))
         {
             sec_answer.setError("Field is required");
-            focusView = sec_answer;
+            if(focusView == null)
+                focusView = sec_answer;
             cancel = true;
         }
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
             // form field with an error.
+            Log.v("FOCUS VIEW REQUESTED",focusView.toString());
             focusView.requestFocus();
         }
         else {

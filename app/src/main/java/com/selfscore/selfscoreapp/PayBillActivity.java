@@ -2,15 +2,11 @@ package com.selfscore.selfscoreapp;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +16,7 @@ public class PayBillActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.paybill);
+        setContentView(R.layout.activity_paybill);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         View header_logo = myToolbar.findViewById(R.id.header_logo);
