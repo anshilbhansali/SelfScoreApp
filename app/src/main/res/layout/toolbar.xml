@@ -11,7 +11,7 @@
             android:id="@+id/my_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/midnight"
+            android:background="@color/navy100"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -31,7 +31,7 @@
                         <TextView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:background="@mipmap/sslogofinal"
+                            android:background="@drawable/sslogo_final"
                             android:layout_marginBottom="0dp"/>
 
                         <LinearLayout

@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.midnight)));
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.navy100)));
 
         //DRAWER SETUP
         rowItems_left = model.getLeftRowItems();

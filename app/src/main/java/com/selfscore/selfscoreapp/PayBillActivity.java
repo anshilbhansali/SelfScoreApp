@@ -31,7 +31,7 @@ public class PayBillActivity extends AppCompatActivity {
         actionBar.setTitle("                Pay Bill");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.midnight)));
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.navy100)));
     }
 
     @Override

@@ -38,7 +38,7 @@
 
             <LinearLayout
                 android:layout_width="250dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp">
 
@@ -50,9 +50,9 @@
             <ImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="0dp"
-                android:background="@mipmap/email_sent_green"
+                android:src="@drawable/email_sent"
                 />
 
             <TextView

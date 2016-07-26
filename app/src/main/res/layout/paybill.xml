@@ -248,7 +248,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/paynow"
+                android:src="@drawable/paynow"
                 android:adjustViewBounds="true"
                 android:background="@color/navy100"
 
@@ -275,7 +275,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@mipmap/autopay"/>
+                android:src="@drawable/autopay"/>
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
@@ -283,7 +283,8 @@
                 android:textSize="20sp"
                 android:layout_gravity="center"
                 android:textColor="#ffffff"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"/>
 
         </LinearLayout>
 
