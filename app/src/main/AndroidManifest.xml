@@ -31,13 +31,12 @@
         <activity
             android:name=".CreateAccountActivity"
             android:label="SelfScore"
-            android:windowSoftInputMode="adjustNothing"></activity>
-
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".QuestionAuthenticationActivity"
-            android:windowSoftInputMode="adjustNothing">
-
-        </activity>
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".UnableLogIn" />
+        <activity android:name=".EmailSent"></activity>
     </application>
 
 </manifest>

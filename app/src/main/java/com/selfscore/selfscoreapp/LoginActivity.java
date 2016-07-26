@@ -97,6 +97,15 @@ public class LoginActivity extends AppCompatActivity{
             }
         });
 
+        TextView unablelogin = (TextView) findViewById(R.id.unablelogin);
+        unablelogin.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, UnableLogIn.class);
+                startActivity(intent);
+            }
+        });
+
 
 
         model = ((SelfScoreApplication) this.getApplication()).getModel();

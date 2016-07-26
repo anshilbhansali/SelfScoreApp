@@ -34,7 +34,7 @@
             android:orientation="vertical"
             android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginBottom="80dp">
+            android:layout_marginBottom="0dp">
 
             <LinearLayout
                 android:layout_width="250dp"
@@ -47,57 +47,72 @@
             </LinearLayout>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:text="Please answer this question:"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:layout_marginTop="70dp"
-                android:layout_marginBottom="30dp"/>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@mipmap/email_sent_green"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/sec_question"
-                android:text="What is the ......"
+                android:text="Email sent - it may take a few minutes."
+                android:textColor="@color/navy30"
+                android:layout_marginBottom="0dp"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check your inbox"
                 android:textColor="@color/navy30"
                 android:layout_marginBottom="10dp"
-                android:textSize="15sp"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorWhite">
-
-                <EditText
-                    android:id="@+id/sec_answer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Answer"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:background="@color/colorWhite"
-                    android:paddingLeft="10dp"/>
-
-
-            </android.support.design.widget.TextInputLayout>
-
+                android:textSize="15sp"
+                android:textStyle="bold"/>
 
 
 
             <Button
-                android:id="@+id/continue_button"
+                android:id="@+id/back_login_button"
                 style="?android:textAppearanceSmall"
                 android:background="@drawable/mybutton_yellow"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="0dp"
+                android:text="Back to log in"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/navy30"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive an email?"
+                android:layout_marginTop="0dp"
+                android:textSize="22sp"
+                android:textColor="@color/navy20"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/resend_button"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Continue"
+                android:text="Resend email"
                 android:textSize="25sp"
-                android:textColor="@color/colorWhite"/>
+                android:textStyle="normal"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/my_button_applynow" />
 
 
 
@@ -105,3 +120,4 @@
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
+

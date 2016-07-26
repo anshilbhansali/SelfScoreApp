@@ -51,51 +51,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorWhite"
-                android:text="Please answer this question:"
+                android:text="Unable to log in?"
                 android:textSize="25sp"
                 android:textStyle="bold"
                 android:layout_marginTop="70dp"
                 android:layout_marginBottom="30dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/sec_question"
-                android:text="What is the ......"
-                android:textColor="@color/navy30"
-                android:layout_marginBottom="10dp"
-                android:textSize="15sp"/>
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorWhite">
-
-                <EditText
-                    android:id="@+id/sec_answer"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Answer"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:background="@color/colorWhite"
-                    android:paddingLeft="10dp"/>
-
-
-            </android.support.design.widget.TextInputLayout>
-
 
 
 
             <Button
-                android:id="@+id/continue_button"
+                android:id="@+id/forgot_username_button"
                 style="?android:textAppearanceSmall"
                 android:background="@drawable/mybutton_yellow"
-                android:layout_width="230dp"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:text="Forgot Username"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"/>
+
+            <Button
+                android:id="@+id/forgot_password_button"
+                style="?android:textAppearanceSmall"
+                android:background="@drawable/mybutton_yellow"
+                android:layout_width="290dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Continue"
+                android:text="Forgot Password"
                 android:textSize="25sp"
                 android:textColor="@color/colorWhite"/>
 
