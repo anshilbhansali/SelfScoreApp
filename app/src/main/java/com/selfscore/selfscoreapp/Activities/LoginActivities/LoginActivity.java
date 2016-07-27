@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -276,13 +277,19 @@ public class LoginActivity extends AppCompatActivity{
     //SO THAT BACK BUTTON WILL CLOSE THE APP FROM LOGIN ACTIVITY
     @Override
     public void onBackPressed() {
-        finish();
+        Log.v("BACK IS PRESSED", "ONBACK PRESSED");
+        //restart login on back button pressed
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            finish();
+            Log.v("BACK IS PRESSED", "ON KEY DOWN");
+            //restart login on back button pressed
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
             return true;
         }
 

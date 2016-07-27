@@ -15,7 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/RealTheme">
         <activity android:name=".Activities.DashboardActivities.MainActivity" />
-        <activity android:name=".Activities.DashboardActivities.PayBillActivity" />
+
+        <activity android:name=".Activities.DashboardActivities.PayBillActivity">
+
+
+        </activity>
 
         <!-- adjustNothing is to prevent focus on edit text automatically -->
         <activity

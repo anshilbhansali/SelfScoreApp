@@ -30,7 +30,7 @@ public class UpdateInfoActivity extends AppCompatActivity {
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
         TextView header_view = (TextView) findViewById(R.id.header_card);
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)header_view.getLayoutParams();
-        params.setMarginStart(130);
+        params.setMarginStart(160);
         header_view.setLayoutParams(params);
         header_view.setText("Update Info");
 
