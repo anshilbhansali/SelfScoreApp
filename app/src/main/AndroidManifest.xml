@@ -14,24 +14,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/RealTheme">
-        <activity android:name=".Activities.DashboardActivities.MainActivity" />
+        <activity android:name=".Activities.DashboardActivities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".Activities.DashboardActivities.PayBillActivity">
-
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+
+        <activity android:name=".Activities.DashboardActivities.PayBillActivity" />
 
         <!-- adjustNothing is to prevent focus on edit text automatically -->
         <activity
             android:name=".Activities.LoginActivities.LoginActivity"
             android:label="SelfScore"
             android:windowSoftInputMode="adjustNothing">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
@@ -40,28 +38,22 @@
             android:name=".Activities.LoginActivities.CreateAccountActivity"
             android:label="SelfScore"
             android:windowSoftInputMode="adjustNothing" />
-
         <activity
             android:name=".Activities.LoginActivities.QuestionAuthenticationActivity"
             android:windowSoftInputMode="adjustNothing" />
-
         <activity android:name=".Activities.LoginActivities.UnableLogIn" />
-
         <activity android:name=".Activities.LoginActivities.EmailSent" />
-
-        <activity android:name=".Activities.DashboardActivities.MyProfileActivity">
-
-
-        </activity>
-
-
-
+        <activity android:name=".Activities.DashboardActivities.MyProfileActivity" />
         <activity
             android:name=".Activities.DashboardActivities.UpdateInfoActivity"
-            android:windowSoftInputMode="adjustNothing">
+            android:windowSoftInputMode="adjustNothing" />
+        <activity android:name=".Activities.DashboardActivities.AccountSettingsActivity">
 
         </activity>
-
+        <activity
+            android:name=".Activities.DashboardActivities.ChangePassword"
+            android:windowSoftInputMode="adjustNothing"></activity>
+        <activity android:name=".Activities.DashboardActivities.UpdateSecQuestion"></activity>
     </application>
 
 </manifest>

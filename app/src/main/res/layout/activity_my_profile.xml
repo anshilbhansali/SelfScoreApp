@@ -95,8 +95,8 @@
             android:layout_height="wrap_content"
             android:text="Update Info"
             android:textColor="@color/midnight"
-            android:textSize="22sp"
-            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
             android:layout_marginLeft="20dp"/>
 
         <!-- empty view -->

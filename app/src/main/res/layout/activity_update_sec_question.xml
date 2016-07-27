@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy10">
+
+    <include layout="@layout/card_toolbar"></include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:id="@+id/check_password_view">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your password to continue"
+                android:textColor="@color/midnight"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="35dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColorHint="@color/navy10"
+                android:inputType="textPassword"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/colorWhite"
+                android:id="@+id/current_p"/>
+
+
+            <Button
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:text="Continue"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/mybutton_yellow"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:id="@+id/continue_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:id="@+id/update_secq_view">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select security question"
+                android:textColor="@color/midnight"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="0dp"
+                android:layout_marginLeft="35dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spinner_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="3dp"
+                    android:background="@color/colorWhite"
+                    android:spinnerMode="dropdown"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▼"
+                    android:textColor="@color/midnight"
+                    android:textSize="20sp"
+                    android:rotation="0"
+                    android:layout_marginLeft="310dp"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/arrow_down"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your answer"
+                android:textColor="@color/midnight"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="35dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Answer"
+                android:textColorHint="@color/navy10"
+                android:inputType="text"
+                android:textStyle="bold"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/colorWhite"
+                android:id="@+id/answer_view"
+                />
+
+            <Button
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:text="Update security question"
+                android:textSize="17sp"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/mybutton_yellow"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:id="@+id/update_sq_button"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

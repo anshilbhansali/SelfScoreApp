@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
+import android.os.CountDownTimer;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -125,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(activity, MyProfileActivity.class);
                     startActivity(intent);
                 }
+                else if(position == 1)
+                {
+                    //account settings
+                    Intent intent = new Intent(activity, AccountSettingsActivity.class);
+                    startActivity(intent);
+                }
                 else if(position == 2)
                 {
                     //log out
@@ -153,6 +161,26 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
         mRecyclerView.setAdapter(mAdapter);
 
+        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                //simulate refresh data from servers
+                new CountDownTimer(1500, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    public void onFinish() {
+                       swipeRefreshLayout.setRefreshing(false);
+                    }
+
+                }.start();
+
+            }
+        });
 
     }
 
