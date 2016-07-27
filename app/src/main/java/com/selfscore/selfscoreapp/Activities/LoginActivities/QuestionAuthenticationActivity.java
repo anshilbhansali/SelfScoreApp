@@ -1,4 +1,4 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Activities.LoginActivities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.MainActivity;
+import com.selfscore.selfscoreapp.Model.Model;
+import com.selfscore.selfscoreapp.R;
+import com.selfscore.selfscoreapp.SelfScoreApplication;
 
 public class QuestionAuthenticationActivity extends AppCompatActivity {
 

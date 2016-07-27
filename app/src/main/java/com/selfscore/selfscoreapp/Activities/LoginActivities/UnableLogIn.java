@@ -1,4 +1,4 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Activities.LoginActivities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.zip.Inflater;
+import com.selfscore.selfscoreapp.R;
 
 public class UnableLogIn extends AppCompatActivity {
 

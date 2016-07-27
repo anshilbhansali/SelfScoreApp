@@ -1,13 +1,16 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Activities.LoginActivities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.selfscore.selfscoreapp.Activities.LoginActivities.LoginActivity;
+import com.selfscore.selfscoreapp.Activities.LoginActivities.UnableLogIn;
+import com.selfscore.selfscoreapp.R;
 
 public class EmailSent extends AppCompatActivity {
 
@@ -23,8 +26,7 @@ public class EmailSent extends AppCompatActivity {
         String checkUsernameMsg="", checkPasswordMsg="";
         checkUsernameMsg = intent.getStringExtra("getUsernameMsg");
         checkPasswordMsg = intent.getStringExtra("getPasswordMsg");
-        //Log.v("CHECK_USERMSG", checkUsernameMsg);
-        //Log.v("CHECK_PASSMSG", checkPasswordMsg);
+
         if(checkUsernameMsg == null)
         {
             checkMessage.setText(checkPasswordMsg);

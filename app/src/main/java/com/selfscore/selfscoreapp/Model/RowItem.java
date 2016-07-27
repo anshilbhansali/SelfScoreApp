@@ -1,4 +1,4 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Model;
 
 public class RowItem{
     private int imageId;

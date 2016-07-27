@@ -1,11 +1,9 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Activities.DashboardActivities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,15 +17,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.selfscore.selfscoreapp.Adapters.DrawerItemViewAdapter;
+import com.selfscore.selfscoreapp.Activities.LoginActivities.LoginActivity;
+import com.selfscore.selfscoreapp.Model.Model;
+import com.selfscore.selfscoreapp.R;
+import com.selfscore.selfscoreapp.Adapters.RecyclerViewAdapter;
+import com.selfscore.selfscoreapp.Model.RowItem;
+import com.selfscore.selfscoreapp.SelfScoreApplication;
 
-import static com.selfscore.selfscoreapp.DrawerItemViewAdapter.*;
-import static com.selfscore.selfscoreapp.R.color.midnight;
+import java.util.List;
 
 /* created by Anshil Bhansali on 7/7/16 */
 
@@ -118,7 +119,13 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList_right.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position == 2)
+                if(position == 0)
+                {
+                    //my profile
+                    Intent intent = new Intent(activity, MyProfileActivity.class);
+                    startActivity(intent);
+                }
+                else if(position == 2)
                 {
                     //log out
                     Intent intent = new Intent(activity, LoginActivity.class);

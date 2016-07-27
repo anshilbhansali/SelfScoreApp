@@ -1,8 +1,9 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Model;
 
 import android.app.Application;
 import android.database.Observable;
-import android.widget.ListView;
+
+import com.selfscore.selfscoreapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

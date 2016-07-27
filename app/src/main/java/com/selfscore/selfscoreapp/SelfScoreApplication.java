@@ -1,7 +1,8 @@
 package com.selfscore.selfscoreapp;
 
 import android.app.Application;
-import android.graphics.AvoidXfermode;
+
+import com.selfscore.selfscoreapp.Model.Model;
 
 /**
  * Created by anshilbhansali on 7/22/16.

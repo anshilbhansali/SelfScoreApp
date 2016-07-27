@@ -1,11 +1,8 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -14,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayBillActivity;
+import com.selfscore.selfscoreapp.R;
 
 /**
  * Created by anshilbhansali on 7/8/16.

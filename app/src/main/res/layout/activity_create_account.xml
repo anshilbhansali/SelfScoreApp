@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.selfscore.selfscoreapp.LoginActivity"
+    tools:context=".Activities.LoginActivities.LoginActivity"
     android:background="@color/navy100">
 
     <!-- Login progress -->
@@ -35,6 +35,7 @@
             android:gravity="center"
             android:layout_gravity="center"
             android:layout_marginBottom="20dp">
+
 
             <LinearLayout
                 android:layout_width="250dp"
@@ -188,6 +189,13 @@
                 android:text="Continue"
                 android:textSize="25sp"
                 android:textColor="@color/colorWhite"/>
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <include layout="@layout/card_toolbar"></include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/myprofile_grey"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="13dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aditya Bhandari"
+                android:textColor="@color/midnight"
+                android:textSize="22sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone"
+                android:textSize="15sp"
+                android:textColor="@color/navy30"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="555.123.4567"
+                android:textSize="15sp"
+                android:textColor="@color/midnight"
+                android:layout_marginTop="0dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="15sp"
+                android:textColor="@color/navy30"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="guysmiley@gmail.com"
+                android:textSize="14sp"
+                android:textColor="@color/midnight"
+                android:layout_marginTop="0dp"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/navy10"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
+        android:id="@+id/update_info_button"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/updateinfo_icon"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/updateinfo_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update Info"
+            android:textColor="@color/midnight"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"/>
+
+        <!-- empty view -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="▼"
+            android:textSize="24sp"
+            android:rotation="-90"
+            android:textColor="@color/midnight"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

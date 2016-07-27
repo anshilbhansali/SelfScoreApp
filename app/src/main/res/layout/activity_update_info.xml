@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy10">
+
+    <include layout="@layout/card_toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:src="@drawable/update_photo"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PHONE"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="0dp"
+                android:layout_marginBottom="0dp">
+
+                <EditText
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:text="555"
+                    android:textColor="@color/midnight"
+                    android:gravity="center"
+                    android:background="@color/colorWhite"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:text="123"
+                    android:textColor="@color/midnight"
+                    android:gravity="center"
+                    android:background="@color/colorWhite"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:layout_width="70dp"
+                    android:layout_height="50dp"
+                    android:text="4567"
+                    android:textColor="@color/midnight"
+                    android:gravity="center"
+                    android:background="@color/colorWhite"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EMAIL ADDRESS"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="guysmiley@email.com"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STREET ADDRESS 1"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="123 Happytown Road"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STREET ADDRESS 2 (optional)"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Apartment 777"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CITY"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Happytown, ME 12345"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GRADUATE SCHOOL"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Stanford University"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GRADUATE FIELD OF STUDY"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="PhD Computer Science"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UNDERGRADUATE SCHOOL"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="UC Berkely"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UNDERGRADUATE FIELD OF STUDY"
+                android:textSize="18sp"
+                android:textColor="@color/midnight"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginTop="10dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="BS Computer Science"
+                android:layout_marginLeft="0dp"
+                android:paddingLeft="20dp"
+                android:textColor="@color/midnight"
+                android:background="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="30dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/mybutton_yellow"
+                    android:text="Save changes"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/sav_changes_button"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/mybutton"
+                    android:text="Cancel"
+                    android:textColor="@color/colorWhite"
+                    android:layout_weight="1"
+                    android:id="@+id/cancel_button"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>

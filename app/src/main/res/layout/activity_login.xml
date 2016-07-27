@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.selfscore.selfscoreapp.LoginActivity"
+    tools:context=".Activities.LoginActivities.LoginActivity"
     android:background="@color/navy100">
 
     <!-- Login progress -->
@@ -70,7 +70,8 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:background="@color/colorWhite"/>
+                    android:background="@color/colorWhite"
+                    android:paddingLeft="10dp"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -87,7 +88,8 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:background="@color/colorWhite"/>
+                    android:background="@color/colorWhite"
+                    android:paddingLeft="10dp"/>
 
 
             </android.support.design.widget.TextInputLayout>

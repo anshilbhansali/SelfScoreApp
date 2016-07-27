@@ -1,4 +1,4 @@
-package com.selfscore.selfscoreapp;
+package com.selfscore.selfscoreapp.Activities.LoginActivities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -19,6 +19,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.MainActivity;
+import com.selfscore.selfscoreapp.Model.Model;
+import com.selfscore.selfscoreapp.R;
+import com.selfscore.selfscoreapp.SelfScoreApplication;
 
 public class CreateAccountActivity extends AppCompatActivity {
 
