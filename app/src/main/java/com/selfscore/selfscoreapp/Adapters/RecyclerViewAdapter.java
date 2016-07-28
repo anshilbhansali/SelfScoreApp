@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.CreditAvailabilityActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayBillActivity;
 import com.selfscore.selfscoreapp.R;
 
@@ -75,7 +76,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             {
                 //earn cash
                 LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) content.getLayoutParams();
-                p.setMargins(0,10,5,5); //decrease top and bottom margins, to adjust button
+                p.setMargins(0,0,5,5); //decrease top and bottom margins, to adjust button
+
 
                 content_layout = inflater.inflate(R.layout.earn_cash_content, null);
                 content.addView(content_layout);
@@ -116,6 +118,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     if(header.equals("Pay Bill"))
                     {
                         Intent intent = new Intent(context, PayBillActivity.class);
+                        context.startActivity(intent);
+                    }
+                    else if (header.equals("Credit Availability"))
+                    {
+                        Intent intent = new Intent(context, CreditAvailabilityActivity.class);
                         context.startActivity(intent);
                     }
                     else

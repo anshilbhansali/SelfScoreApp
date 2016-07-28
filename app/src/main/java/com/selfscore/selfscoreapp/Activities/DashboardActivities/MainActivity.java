@@ -114,6 +114,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(activity, PayBillActivity.class);
                     startActivity(intent);
                 }
+                else if(position == 1)
+                {
+                    //activity_credit_avail
+                    Intent intent = new Intent(activity, CreditAvailabilityActivity.class);
+                    startActivity(intent);
+                }
 
             }
         });

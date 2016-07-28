@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class Model extends Observable{
 
+    //<------------------------PRIVATE VARIABLES---------------------------------------->
+
     //app
     private Application app;
 
@@ -51,11 +53,13 @@ public class Model extends Observable{
             "What is your favourite colour?"
     };
 
-
-    //METHODS
+    //<------------------------METHODS---------------------------------------->
     public Model(Application app)
     {
         this.app = app;
+
+        //should get data from servers
+
 
         addDatatoDrawers();
 

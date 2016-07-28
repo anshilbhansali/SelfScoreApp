@@ -8,5 +8,10 @@
         android:bottomLeftRadius="100dp"
         android:topLeftRadius="100dp"
         android:topRightRadius="100dp"/>
-    <stroke android:width="2px" android:color="@color/navy30" />
+    <stroke android:width="2px"
+        android:color="#ccc" />
+    <gradient
+        android:startColor="@color/colorWhite"
+        android:endColor="@color/navy20"
+        android:angle="-270" />
 </shape>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
     android:layout_gravity="center">
@@ -10,28 +10,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginRight="5dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="$100"
             android:textSize="25sp"
-            android:textColor="@color/sky"
+            android:textColor="@color/teal"
             android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="available"
-            android:textColor="@color/sky"/>
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/teal"/>
 
     </LinearLayout>
 
     <include layout="@layout/donut_bar_creditavail"></include>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,7 +49,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="spent"
-            android:textColor="@color/navy100"/>
+            android:textColor="@color/navy100"
+            android:layout_marginLeft="15dp"/>
 
     </LinearLayout>
 

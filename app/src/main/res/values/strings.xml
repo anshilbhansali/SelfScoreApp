@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SelfScoreApp</string>
+    <string name="app_name">SelfScore</string>
     <string name="drawer_open">Open drawer navigation</string>
     <string name="drawer_close">Close drawer navigation</string>
 
