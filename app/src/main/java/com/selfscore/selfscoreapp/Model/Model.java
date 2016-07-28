@@ -34,8 +34,8 @@ public class Model extends Observable{
     //Cardviews
     private String[] card_headers = new String[]{"Pay Bill", "Credit Availability",
             "Earn Cash", "My Purchases"};
-    private String[] card_subheaders = new String[]{"payment due in","of credit available in",
-            "of credit available in",""};
+    private String[] card_subheaders = new String[]{"payment due in","of credit available",
+            "cash earned",""};
     private String[] card_subheader_nums = new String[]{"$15","20%","$20",""};
     private String[] button_txt = new String[]{"PAY NOW","INCREASE CREDIT","INVITE FRIENDS","NONE"};
 

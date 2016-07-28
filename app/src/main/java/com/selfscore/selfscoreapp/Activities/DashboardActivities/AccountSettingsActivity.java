@@ -28,7 +28,7 @@ public class AccountSettingsActivity extends AppCompatActivity {
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
         TextView header_view = (TextView) findViewById(R.id.header_card);
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)header_view.getLayoutParams();
-        params.setMarginStart(110);
+        params.setMarginStart(105);
         header_view.setLayoutParams(params);
         header_view.setText("Account Settings");
 

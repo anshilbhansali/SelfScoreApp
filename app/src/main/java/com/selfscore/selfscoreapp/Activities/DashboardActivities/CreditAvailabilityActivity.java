@@ -2,6 +2,7 @@ package com.selfscore.selfscoreapp.Activities.DashboardActivities;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,7 +29,7 @@ public class CreditAvailabilityActivity extends AppCompatActivity {
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
         TextView header_view = (TextView) findViewById(R.id.header_card);
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)header_view.getLayoutParams();
-        params.setMarginStart(105);//set left margin
+        params.setMarginStart(100);//set left margin
         header_view.setLayoutParams(params);
         header_view.setText("Credit Availability");
 
@@ -46,6 +47,27 @@ public class CreditAvailabilityActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        ImageView info_popup = (ImageView) findViewById(R.id.info_popup);
+        final View popup = findViewById(R.id.pop_up);
+        View close_b = popup.findViewById(R.id.close_popup);
+        popup.setVisibility(View.GONE);
+
+        info_popup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popup.setVisibility(View.VISIBLE);
+            }
+        });
+
+        close_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popup.setVisibility(View.GONE);
+            }
+        });
+
+
 
 
     }

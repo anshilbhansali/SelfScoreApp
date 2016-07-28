@@ -20,5 +20,10 @@
     </string>
     <string name="conf_password_error">Must be the same as password</string>
 
+    <string name="info_popup_text">Your current balance may be different
+    from your last statement balance, depending on what you\'ve spent since
+    your last statement period. Be sure to review your transaction history
+    and keep track of your spending to monitor your credit limit.</string>
+
 
 </resources>

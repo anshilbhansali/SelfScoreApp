@@ -68,6 +68,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             else if(viewType == 1)
             {
                 //credit availability
+                subheader_num.setTextColor(context.getResources().getColor(R.color.teal));
                 content_layout = inflater.inflate(R.layout.credit_avail_content, null);
                 content.addView(content_layout);
 
@@ -77,7 +78,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 //earn cash
                 LinearLayout.LayoutParams p = (LinearLayout.LayoutParams) content.getLayoutParams();
                 p.setMargins(0,0,5,5); //decrease top and bottom margins, to adjust button
-
 
                 content_layout = inflater.inflate(R.layout.earn_cash_content, null);
                 content.addView(content_layout);

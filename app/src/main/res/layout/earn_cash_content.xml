@@ -41,7 +41,7 @@
         android:layout_marginBottom="0dp"
         android:gravity="left">
 
-        <include layout="@layout/text_bubble"></include>
+        <include layout="@layout/text_bubble_green"></include>
 
     </LinearLayout>
 
