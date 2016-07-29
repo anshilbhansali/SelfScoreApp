@@ -26,32 +26,29 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:background="@color/navy100"
+            android:layout_width="53dp"
+            android:layout_height="17dp"
+            android:background="@drawable/round_corners_navy100"
             android:text="OCT"
-            android:textSize="17sp"
+            android:textSize="13sp"
             android:paddingTop="0dp"
-            android:paddingLeft="18dp"
+            android:paddingLeft="13dp"
             android:textStyle="bold"
             android:textColor="@color/navy30"
             android:layout_marginBottom="0dp"
             android:paddingBottom="0dp"/>
 
         <TextView
-            android:layout_width="70dp"
-            android:layout_height="45dp"
-            android:background="@color/navy30"
+            android:layout_width="53dp"
+            android:layout_height="37dp"
+            android:background="@drawable/round_corners_navy20"
             android:text="31"
-            android:textSize="35sp"
-            android:paddingLeft="18dp"
-            android:paddingTop="0dp"
+            android:textSize="25sp"
+            android:paddingLeft="13dp"
+            android:paddingBottom="0dp"
             android:textStyle="bold"
             android:textColor="@color/navy100" />
 
 
     </LinearLayout>
-
-
-
 </LinearLayout>

@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/navy100"
+        android:elevation="5dp"
         android:id="@+id/_toolbar">
 
 
@@ -26,7 +27,7 @@
                 android:src="@drawable/back_button"
                 android:layout_marginRight="0dp"
                 android:paddingRight="0dp"
-                android:padding="5dp"
+                android:padding="6dp"
                 android:id="@+id/back_button"
                 android:layout_gravity="left"/>
 

@@ -11,9 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.selfscore.selfscoreapp.Model.Model;
 import com.selfscore.selfscoreapp.R;
+import com.selfscore.selfscoreapp.SelfScoreApplication;
 
 public class MyProfileActivity extends AppCompatActivity {
+
+    Model model;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
@@ -55,6 +59,17 @@ public class MyProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        model = ((SelfScoreApplication) this.getApplication()).getModel();
+
+        TextView name = (TextView) findViewById(R.id.name_view);
+        TextView phone = (TextView) findViewById(R.id.phonenum_view);
+        TextView email = (TextView) findViewById(R.id.email_view);
+
+        name.setText(model.getUser().getName());
+        email.setText(model.getUser().getEmail());
+        String phone_num = model.getUser().getPhone().get(0)+"."+model.getUser().getPhone().get(1)+"."+model.getUser().getPhone().get(2);
+        phone.setText(phone_num);
 
     }
 

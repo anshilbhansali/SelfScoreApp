@@ -21,6 +21,7 @@ public class Model extends Observable{
     //credentials
     private String username, password;
     private String sec_question="What is the name of the person you admire the most?", answer;
+    public UserInfo user;
 
     //drawers
     private String[] left_drawer = new String[]{"Pay Bill", "Credit Availability",
@@ -60,9 +61,9 @@ public class Model extends Observable{
 
         //should get data from servers
 
-
         addDatatoDrawers();
 
+        user = new UserInfo();
     }
 
     private void addDatatoDrawers()
@@ -109,6 +110,8 @@ public class Model extends Observable{
     public String[] getCard_buttons(){return this.button_txt;}
 
     public String[] getSecQuestions(){ return this.sec_questions;}
+
+    public UserInfo getUser(){return user;}
 
 
 }

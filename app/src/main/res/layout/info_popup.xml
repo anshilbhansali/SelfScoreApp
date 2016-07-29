@@ -3,18 +3,21 @@
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:gravity="center">
+    android:gravity="center"
+    android:clipToPadding="false">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:elevation="8dp"
+        android:background="@drawable/border_shadow"
         android:layout_marginTop="40dp">
 
         <TextView
             android:layout_width="330dp"
             android:layout_height="200dp"
-            android:background="@drawable/round_corners"
+            android:background="@drawable/round_corners_teal"
             android:textColor="@color/colorWhite"
             android:text="@string/info_popup_text"
             android:paddingTop="15dp"
