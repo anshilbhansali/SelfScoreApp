@@ -23,7 +23,15 @@
         <activity
             android:name=".Activities.LoginActivities.LoginActivity"
             android:label="SelfScore"
-            android:windowSoftInputMode="adjustNothing"></activity>
+            android:windowSoftInputMode="adjustNothing">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".Activities.LoginActivities.CreateAccountActivity"
             android:label="SelfScore"
@@ -44,11 +52,7 @@
         <activity android:name=".Activities.DashboardActivities.UpdateSecQuestion" />
         <activity android:name=".Activities.DashboardActivities.CreditAvailabilityActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
     </application>

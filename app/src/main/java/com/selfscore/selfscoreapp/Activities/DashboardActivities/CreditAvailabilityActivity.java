@@ -48,6 +48,7 @@ public class CreditAvailabilityActivity extends AppCompatActivity {
             }
         });
 
+        //POP UP BOX
         ImageView info_popup = (ImageView) findViewById(R.id.info_popup);
         final View popup = findViewById(R.id.pop_up);
         View close_b = popup.findViewById(R.id.close_popup);

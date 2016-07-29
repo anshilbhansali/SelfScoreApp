@@ -3,11 +3,11 @@
     android:shape="rectangle"
     android:padding="10dp">
     <!-- you can use any color you want I used here gray color-->
-    <solid android:color="#FF5C7286"/>
+    <solid android:color="#FF344C63"/>
     <corners android:bottomRightRadius="100dp"
         android:bottomLeftRadius="100dp"
         android:topLeftRadius="100dp"
         android:topRightRadius="100dp"/>
     <stroke android:width="2px"
-        android:color="#FF5C7286" />
+        android:color="#FF344C63" />
 </shape>

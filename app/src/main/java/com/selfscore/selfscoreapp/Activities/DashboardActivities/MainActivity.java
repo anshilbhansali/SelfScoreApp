@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         if(extras != null && extras.get("ACTIVITY_NAME").equals("Login"))
             Toast.makeText(MainActivity.this, "Welcome "+model.getUsername(), Toast.LENGTH_LONG).show();
 
-        //TOOLBAR setup
+        //<-----------------------------TOOLBAR SETUP--------------------------------------->
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
         ActionBar actionBar = getSupportActionBar();
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeButtonEnabled(true);
         actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.navy100)));
 
-        //DRAWER SETUP
+        //<-----------------------------DRAWER SETUP--------------------------------------->
         rowItems_left = model.getLeftRowItems();
         rowItems_right = model.getRightRowItems();
 
@@ -90,7 +90,51 @@ public class MainActivity extends AppCompatActivity {
         mDrawerList_left = (ListView) findViewById(R.id.left_drawer);
         mDrawerList_right = (ListView) findViewById(R.id.right_drawer);
 
+        AdaptDrawers();
+        setDrawerListeners();
+        setupDrawerToggle();
 
+        //<-----------------------------RECYCLER VIEW--------------------------------------->
+        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView.setHasFixedSize(true);
+
+        mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        //connect view to adapter
+        header_names = model.getCard_headers();
+        sub_headers = model.getCard_subheaders();
+        sub_headers_nums = model.getCard_subheader_nums();
+        buttons_text = model.getCard_buttons();
+        mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
+        mRecyclerView.setAdapter(mAdapter);
+
+        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+                //simulate refresh data from servers
+                new CountDownTimer(1500, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    public void onFinish() {
+                       swipeRefreshLayout.setRefreshing(false);
+                    }
+
+                }.start();
+
+            }
+        });
+
+    }
+
+    private void AdaptDrawers()
+    {
         //Set the ADAPTER for the DRAWER list view
         DrawerItemViewAdapter adapter_left = new DrawerItemViewAdapter(this,
                 R.layout.list_item, rowItems_left);
@@ -100,7 +144,11 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerList_left.setAdapter(adapter_left);
         mDrawerList_right.setAdapter(adapter_right);
+    }
 
+
+    private void setDrawerListeners()
+    {
         mDrawerList_left.setBackgroundColor(getResources().getColor(R.color.midnight));
         mDrawerList_right.setBackgroundColor(getResources().getColor(R.color.midnight));
 
@@ -148,50 +196,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        setupDrawers();
-
-        //RECYCLER VIEW
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
-
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        //connect view to adapter
-        header_names = model.getCard_headers();
-        sub_headers = model.getCard_subheaders();
-        sub_headers_nums = model.getCard_subheader_nums();
-        buttons_text = model.getCard_buttons();
-        mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
-        mRecyclerView.setAdapter(mAdapter);
-
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-
-                //simulate refresh data from servers
-                new CountDownTimer(1500, 1000) {
-
-                    public void onTick(long millisUntilFinished) {
-
-                    }
-
-                    public void onFinish() {
-                       swipeRefreshLayout.setRefreshing(false);
-                    }
-
-                }.start();
-
-            }
-        });
-
     }
 
 
-    private void setupDrawers() {
+    private void setupDrawerToggle() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
                 R.string.drawer_open, R.string.drawer_close) {
 
