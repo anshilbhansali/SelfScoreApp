@@ -65,11 +65,16 @@ public class MyProfileActivity extends AppCompatActivity {
         TextView name = (TextView) findViewById(R.id.name_view);
         TextView phone = (TextView) findViewById(R.id.phonenum_view);
         TextView email = (TextView) findViewById(R.id.email_view);
+        ImageView profilepic = (ImageView) findViewById(R.id.profile_pic);
 
         name.setText(model.getUser().getName());
         email.setText(model.getUser().getEmail());
         String phone_num = model.getUser().getPhone().get(0)+"."+model.getUser().getPhone().get(1)+"."+model.getUser().getPhone().get(2);
         phone.setText(phone_num);
+
+
+        if(model.getUser().getProfilePic() != null)
+            profilepic.setImageBitmap(model.getUser().getProfilePic());
 
     }
 

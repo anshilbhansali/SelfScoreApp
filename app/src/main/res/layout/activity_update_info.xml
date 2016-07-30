@@ -27,7 +27,17 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
-                    android:src="@drawable/update_photo"/>
+                    android:src="@drawable/userpicture"
+                    android:id="@+id/user_photo"
+                    android:layout_weight="1"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/uploadphoto"
+                    android:layout_marginTop="70dp"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/upload_photobutton"
+                    android:layout_weight="1"/>
 
             </LinearLayout>
 

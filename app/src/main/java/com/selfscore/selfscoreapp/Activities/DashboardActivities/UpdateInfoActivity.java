@@ -1,8 +1,14 @@
 package com.selfscore.selfscoreapp.Activities.DashboardActivities;
 
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +23,10 @@ import android.widget.Toast;
 import com.selfscore.selfscoreapp.Model.Model;
 import com.selfscore.selfscoreapp.R;
 import com.selfscore.selfscoreapp.SelfScoreApplication;
+import com.selfscore.selfscoreapp.Utils.ExifUtils;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class UpdateInfoActivity extends AppCompatActivity {
 
@@ -24,6 +34,11 @@ public class UpdateInfoActivity extends AppCompatActivity {
 
     private EditText phone1, phone2, phone3, email_view, sa1, sa2, city;
     private EditText grad_school, grad_fos, ugrad_school, ugrad_fos;
+
+    private ImageView userphoto;
+    private Bitmap bitmap, rotated_bitmap;
+
+    public static final int GET_FROM_GALLERY = 3;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
@@ -103,7 +118,83 @@ public class UpdateInfoActivity extends AppCompatActivity {
         });
 
 
+        //upload photo
+        ImageView upload_photo_b = (ImageView) findViewById(R.id.upload_photobutton);
+        userphoto = (ImageView) findViewById(R.id.user_photo);
+        if(model.getUser().getProfilePic() != null)
+            userphoto.setImageBitmap(model.getUser().getProfilePic());
 
+        bitmap = null;
+
+        upload_photo_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UploadPhoto();
+            }
+        });
+
+
+
+    }
+
+    private void UploadPhoto()
+    {
+        startActivityForResult(new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.INTERNAL_CONTENT_URI), GET_FROM_GALLERY);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        //Detects request codes
+        if(requestCode==GET_FROM_GALLERY && resultCode == Activity.RESULT_OK) {
+            Uri selectedImage = data.getData();
+            try {
+
+                fixOrientation(bitmap, selectedImage);
+
+                bitmap = decodeUri(selectedImage);
+
+                userphoto.setImageBitmap(bitmap);
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void fixOrientation(Bitmap bm, Uri selectedimage)
+    {
+        bitmap = ExifUtils.rotateBitmap(selectedimage.getPath(), bm);
+    }
+
+    // to handle large memory of images
+    private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
+        BitmapFactory.Options o = new BitmapFactory.Options();
+        o.inJustDecodeBounds = true;
+        BitmapFactory.decodeStream(
+                getContentResolver().openInputStream(selectedImage), null, o);
+
+        final int REQUIRED_SIZE = 100;
+
+        int width_tmp = o.outWidth, height_tmp = o.outHeight;
+        int scale = 1;
+        while (true) {
+            if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE) {
+                break;
+            }
+            width_tmp /= 2;
+            height_tmp /= 2;
+            scale *= 2;
+        }
+
+        BitmapFactory.Options o2 = new BitmapFactory.Options();
+        o2.inSampleSize = scale;
+        return BitmapFactory.decodeStream(
+                getContentResolver().openInputStream(selectedImage), null, o2);
     }
 
     private void saveInfo()
@@ -140,9 +231,10 @@ public class UpdateInfoActivity extends AppCompatActivity {
         //save undergraduate schol
         model.getUser().saveUnderGrad(ugraduate_school, ugraduate_fos);
 
-
+        model.getUser().saveProfilePic(bitmap);
 
     }
+
 
 
 

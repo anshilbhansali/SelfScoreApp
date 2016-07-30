@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorWhite"
-                android:text="Create a username (8 character minimum)"
+                android:text="Create a username (5 character minimum)"
                 android:layout_marginBottom="7dp"
                 android:layout_gravity="left"
                 android:layout_marginLeft="10dp"

@@ -1,5 +1,7 @@
 package com.selfscore.selfscoreapp.Model;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 
 /**
@@ -9,6 +11,7 @@ public class UserInfo {
     private String name, phone_pt1, phone_pt2, phone_pt3, email;
     private String street_addr_1, street_addr_2, city;
     private String grad_school, grad_fos, undergrad_school, undergrad_fos;
+    private Bitmap profile_pic;
 
 
     public UserInfo()
@@ -25,6 +28,7 @@ public class UserInfo {
         grad_fos = "PhD Computer Science";
         undergrad_school = "UC Berkely";
         undergrad_fos = "BS Computer Science";
+        profile_pic = null;
     }
 
     public void savePhone(String phone1, String phone2, String phone3)
@@ -93,7 +97,12 @@ public class UserInfo {
         return ugrad;
     }
 
+    public void saveProfilePic(Bitmap bm)
+    {
+        this.profile_pic = bm;
+    }
 
+    public Bitmap getProfilePic(){return this.profile_pic;}
 
 
 

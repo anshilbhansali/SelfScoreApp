@@ -196,7 +196,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private boolean isUsernameValid(String username) {
 
         //check username criteria
-        return username.length() >= 8;
+        return username.length() >= 5;
     }
 
     private boolean isPasswordValid(String password) {
