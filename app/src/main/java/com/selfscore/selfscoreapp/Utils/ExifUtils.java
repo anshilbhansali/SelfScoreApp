@@ -1,8 +1,14 @@
 package com.selfscore.selfscoreapp.Utils;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.media.ExifInterface;
+import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
+import android.util.Log;
 
 import java.io.IOException;
 import java.lang.reflect.Constructor;
@@ -14,105 +20,51 @@ import java.lang.reflect.Method;
  * Created by anshilbhansali on 7/29/16.
  */
 public class ExifUtils {
+
     /**
-     * taken from - http://stackoverflow.com/questions/20634252/image-from-gallery-rotates-automatically-android
+     * inspired from - http://stackoverflow.com/questions/13511356/android-image-selected-from-gallery-orientation-is-always-0-exif-tag
      */
-    public static Bitmap rotateBitmap(String src, Bitmap bitmap) {
-        try {
-            int orientation = getExifOrientation(src);
 
-            if (orientation == 1) {
-                return bitmap;
-            }
+    public static Bitmap rotateBitmap(Uri uri, Bitmap bitmap, Context context) {
 
-            Matrix matrix = new Matrix();
-            switch (orientation) {
-                case 2:
-                    matrix.setScale(-1, 1);
-                    break;
-                case 3:
-                    matrix.setRotate(180);
-                    break;
-                case 4:
-                    matrix.setRotate(180);
-                    matrix.postScale(-1, 1);
-                    break;
-                case 5:
-                    matrix.setRotate(90);
-                    matrix.postScale(-1, 1);
-                    break;
-                case 6:
-                    matrix.setRotate(90);
-                    break;
-                case 7:
-                    matrix.setRotate(-90);
-                    matrix.postScale(-1, 1);
-                    break;
-                case 8:
-                    matrix.setRotate(-90);
-                    break;
-                default:
-                    return bitmap;
-            }
+        int orientation = getOrientation(context, uri);
 
-            try {
-                Bitmap oriented = Bitmap.createBitmap(bitmap, 0, 0,
-                        bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                bitmap.recycle();
-                return oriented;
-            } catch (OutOfMemoryError e) {
-                e.printStackTrace();
-                return bitmap;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        Log.v("ORIENTATION IS : ", String.valueOf(orientation));
+
+        if (orientation == 0) {
+            return bitmap;
         }
 
-        return bitmap;
-    }
+        //usually, orientation is 90 or 270
+        Matrix matrix = new Matrix();
+        matrix.postRotate(orientation);
 
-    private static int getExifOrientation(String src) throws IOException {
-        int orientation = 1;
 
         try {
-            /**
-             * if your are targeting only api level >= 5 ExifInterface exif =
-             * new ExifInterface(src); orientation =
-             * exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, 1);
-             */
-            if (Build.VERSION.SDK_INT >= 5) {
-                Class<?> exifClass = Class
-                        .forName("android.media.ExifInterface");
-                Constructor<?> exifConstructor = exifClass
-                        .getConstructor(new Class[]{String.class});
-                Object exifInstance = exifConstructor
-                        .newInstance(new Object[]{src});
-                Method getAttributeInt = exifClass.getMethod("getAttributeInt",
-                        new Class[]{String.class, int.class});
-                Field tagOrientationField = exifClass
-                        .getField("TAG_ORIENTATION");
-                String tagOrientation = (String) tagOrientationField.get(null);
-                orientation = (Integer) getAttributeInt.invoke(exifInstance,
-                        new Object[]{tagOrientation, 1});
-            }
-        } catch (ClassNotFoundException e) {
+            Bitmap oriented = Bitmap.createBitmap(bitmap, 0, 0,
+                    bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+            bitmap.recycle();
+            return oriented;
+
+        } catch (OutOfMemoryError e) {
             e.printStackTrace();
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
+            return bitmap;
         }
 
-        return orientation;
     }
+
+    private static int getOrientation(Context context, Uri photoUri) {
+        /* it's on the external media. */
+        Cursor cursor = context.getContentResolver().query(photoUri,
+                new String[] { MediaStore.Images.ImageColumns.ORIENTATION }, null, null, null);
+
+        if (cursor.getCount() != 1) {
+            return -1;
+        }
+
+        cursor.moveToFirst();
+        return cursor.getInt(0);
+    }
+
+
 }

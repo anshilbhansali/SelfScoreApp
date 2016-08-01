@@ -153,9 +153,10 @@ public class UpdateInfoActivity extends AppCompatActivity {
             Uri selectedImage = data.getData();
             try {
 
-                fixOrientation(bitmap, selectedImage);
-
+                //decode and scale the image
                 bitmap = decodeUri(selectedImage);
+
+                fixOrientation(bitmap, selectedImage);
 
                 userphoto.setImageBitmap(bitmap);
 
@@ -168,31 +169,30 @@ public class UpdateInfoActivity extends AppCompatActivity {
 
     private void fixOrientation(Bitmap bm, Uri selectedimage)
     {
-        bitmap = ExifUtils.rotateBitmap(selectedimage.getPath(), bm);
+        bitmap = ExifUtils.rotateBitmap(selectedimage, bm, getApplicationContext());
     }
 
-    // to handle large memory of images
+    // to handle large memory of images, scale image to required size
     private Bitmap decodeUri(Uri selectedImage) throws FileNotFoundException {
+
         BitmapFactory.Options o = new BitmapFactory.Options();
         o.inJustDecodeBounds = true;
         BitmapFactory.decodeStream(
                 getContentResolver().openInputStream(selectedImage), null, o);
 
-        final int REQUIRED_SIZE = 100;
+        //target size
+        int targetW = userphoto.getWidth();
+        int targetH = userphoto.getHeight();
 
+        //curr width and height of image
         int width_tmp = o.outWidth, height_tmp = o.outHeight;
-        int scale = 1;
-        while (true) {
-            if (width_tmp / 2 < REQUIRED_SIZE || height_tmp / 2 < REQUIRED_SIZE) {
-                break;
-            }
-            width_tmp /= 2;
-            height_tmp /= 2;
-            scale *= 2;
-        }
+
+        // Determine how much to scale down the image
+        int scaleFactor = Math.min(width_tmp/targetW, height_tmp/targetH);
 
         BitmapFactory.Options o2 = new BitmapFactory.Options();
-        o2.inSampleSize = scale;
+        o2.inSampleSize = scaleFactor;
+
         return BitmapFactory.decodeStream(
                 getContentResolver().openInputStream(selectedImage), null, o2);
     }
@@ -228,7 +228,7 @@ public class UpdateInfoActivity extends AppCompatActivity {
         ugraduate_school = ugrad_school.getText().toString();
         ugraduate_fos = ugrad_fos.getText().toString();
 
-        //save undergraduate schol
+        //save undergraduate school
         model.getUser().saveUnderGrad(ugraduate_school, ugraduate_fos);
 
         model.getUser().saveProfilePic(bitmap);

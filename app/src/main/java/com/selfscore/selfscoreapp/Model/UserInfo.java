@@ -16,7 +16,7 @@ public class UserInfo {
 
     public UserInfo()
     {
-        name = "Aditya Bhandari";
+        name = "Anshil Bhansali";
         phone_pt1 = "555";
         phone_pt2 = "123";
         phone_pt3 = "4567";
