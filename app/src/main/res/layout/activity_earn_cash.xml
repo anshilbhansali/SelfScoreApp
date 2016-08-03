@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:orientation="vertical"
+    tools:context="com.selfscore.selfscoreapp.Activities.DashboardActivities.EarnCashActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/navy100"
+        android:elevation="5dp"
+        android:id="@+id/_toolbar">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="0dp"
+            android:paddingRight="0dp"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/back_button"
+                android:layout_marginRight="0dp"
+                android:paddingRight="0dp"
+                android:padding="6dp"
+                android:id="@+id/back_button"
+                android:layout_gravity="left"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="Earn Cash"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="87dp"
+                android:gravity="center"
+                android:id="@+id/header_card"
+
+                />
+
+            <!-- empty view -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/sslogo_final"
+                android:layout_marginTop="0dp"
+                android:id="@+id/home_button"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$20 "
+            android:textColor="@color/midnight"
+            android:textSize="27sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cash earned"
+            android:textColor="@color/midnight"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/earn_cash_content"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/navy100"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Earn"
+                android:textColor="@color/colorWhite"
+                android:textSize="27sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" $500 "
+                android:textColor="@color/colorWhite"
+                android:textSize="29sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cash"
+                android:textColor="@color/colorWhite"
+                android:textSize="27sp"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="when 10 friends are approved"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mybutton_yellow"
+            android:text="EMAIL"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:id="@+id/email_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share your invitation link"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF344C63"
+            android:padding="15dp"
+            android:text="selfscore.com/16194"
+            android:textColor="@color/colorWhite"
+            android:textSize="15sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:id="@+id/share_link"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

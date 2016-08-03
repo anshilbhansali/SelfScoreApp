@@ -11,9 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.CreditAvailabilityActivity;
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.EarnCashActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayBillActivity;
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayNowActivity;
 import com.selfscore.selfscoreapp.R;
 
 /**
@@ -125,10 +128,43 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         Intent intent = new Intent(context, CreditAvailabilityActivity.class);
                         context.startActivity(intent);
                     }
-                    else
-                        return;
+                    else if (header.equals("Earn Cash"))
+                    {
+                        //Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, EarnCashActivity.class);
+                        context.startActivity(intent);
+                    }
+                    else if (header.equals("My Purchases"))
+                    {
+                        Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String button_text = button.getText().toString();
+                    if(button_text.equals("PAY NOW"))
+                    {
+                        Intent intent = new Intent(context, PayNowActivity.class);
+                        context.startActivity(intent);
+                    }
+                    else if(button_text.equals("INCREASE CREDIT"))
+                    {
+                        Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(button_text.equals("INVITE FRIENDS"))
+                    {
+                        //Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, EarnCashActivity.class);
+                        context.startActivity(intent);
+                    }
+
+                }
+            });
+
+
         }
     }
 

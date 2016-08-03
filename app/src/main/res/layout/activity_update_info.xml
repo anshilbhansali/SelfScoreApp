@@ -5,7 +5,69 @@
     android:layout_height="match_parent"
     android:background="@color/navy10">
 
-    <include layout="@layout/card_toolbar"></include>
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/navy100"
+        android:elevation="5dp"
+        android:id="@+id/_toolbar">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="0dp"
+            android:paddingRight="0dp"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/back_button"
+                android:layout_marginRight="0dp"
+                android:paddingRight="0dp"
+                android:padding="6dp"
+                android:id="@+id/back_button"
+                android:layout_gravity="left"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="Update Info"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="70dp"
+                android:gravity="center"
+                android:id="@+id/header_card"
+
+                />
+
+            <!-- empty view -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/sslogo_final"
+                android:layout_marginTop="0dp"
+                android:id="@+id/home_button"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,7 +91,7 @@
                     android:layout_height="140dp"
                     android:src="@drawable/userpicture"
                     android:id="@+id/user_photo"
-                    android:layout_weight="1"/>
+                    android:layout_weight="2"/>
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -68,10 +68,10 @@ public class Model extends Observable{
 
     private void addDatatoDrawers()
     {
-        images_left.add(R.mipmap.paybill_icon);
-        images_left.add(R.mipmap.creditavail_icon);
-        images_left.add(R.mipmap.earncash_icon);
-        images_left.add(R.mipmap.mypurchases_icon);
+        images_left.add(R.drawable.paybill);
+        images_left.add(R.drawable.creditavail);
+        images_left.add(R.drawable.earncash);
+        images_left.add(R.drawable.mypurchases);
 
         for (int i = 0; i < left_drawer.length; i++) {
 
@@ -79,9 +79,9 @@ public class Model extends Observable{
             rowItems_left.add(item);
         }
 
-        images_right.add(R.mipmap.myprofile_icon);
-        images_right.add(R.mipmap.settings_icon);
-        images_right.add(R.mipmap.logout_icon);
+        images_right.add(R.drawable.myprof);
+        images_right.add(R.drawable.settings);
+        images_right.add(R.drawable.logout);
 
 
         for (int i = 0; i < right_drawer.length; i++) {

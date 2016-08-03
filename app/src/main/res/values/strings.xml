@@ -25,5 +25,22 @@
     your last statement period. Be sure to review your transaction history
     and keep track of your spending to monitor your credit limit.</string>
 
+    <string name="payment_notice_pt1">Paying your balance off in full and by the due date can ensure that
+    you do not pay any interest or fees.</string>
+
+    <string name="payment_notice_pt2">Statement balances not paid by the due date will incur interest
+     the rate specified in your Cardholder agreement</string>
+
+    <string name="payment_notice_pt3">Payments made after the due date can incur late fees upto $25</string>
+
+    <string name="payment_notice_pt4">Paying less than the minimum due or paying after your due date may
+    result in negative credit bureau reporting</string>
+
+    <string name="payment_notice_pt5">Returned payments will have a fee upto $35 and your financial institution
+    may charge additional fees</string>
+
+    <string name="autopay_pt1">Your Minimum Payment Amount and Monthly Statement Balance will vary each month
+    due to your card usage. For your reference, your last statement balance was $350.</string>
+    <string name="title_activity_earn_cash">EarnCashActivity</string>
 
 </resources>

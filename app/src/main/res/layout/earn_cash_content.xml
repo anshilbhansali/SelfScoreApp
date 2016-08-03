@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center"
     android:background="@color/colorWhite"
     android:paddingBottom="5dp">
@@ -16,20 +16,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Get "
+            android:text="Earn "
             android:textColor="@color/navy100"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="$10 "
+            android:text="$30 "
             android:textColor="@color/navy100"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="for each invited friend who qualifies"
+            android:text="each for you &amp; approved friends"
             android:textColor="@color/navy100"/>
 
     </LinearLayout>
@@ -104,6 +104,8 @@
             android:orientation="horizontal"
             android:paddingRight="5dp"
             android:background="@color/navy30"
+            android:layout_marginBottom="0dp"
+            android:paddingBottom="0dp"
             >
             <TextView
                 android:layout_width="@dimen/person_icon_width"
@@ -117,7 +119,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+$100"
+                    android:text="+$200"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="@color/colorWhite"/>
@@ -136,9 +138,5 @@
 
 
     </LinearLayout>
-
-
-
-
 
 </LinearLayout>

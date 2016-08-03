@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("");
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.navy100)));
+        actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.midnight)));
 
         //<-----------------------------DRAWER SETUP--------------------------------------->
         rowItems_left = model.getLeftRowItems();
@@ -110,26 +110,6 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
         mRecyclerView.setAdapter(mAdapter);
 
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefresh);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-
-                //simulate refresh data from servers
-                new CountDownTimer(1500, 1000) {
-
-                    public void onTick(long millisUntilFinished) {
-
-                    }
-
-                    public void onFinish() {
-                       swipeRefreshLayout.setRefreshing(false);
-                    }
-
-                }.start();
-
-            }
-        });
 
     }
 
@@ -167,6 +147,13 @@ public class MainActivity extends AppCompatActivity {
                     //activity_credit_avail
                     Intent intent = new Intent(activity, CreditAvailabilityActivity.class);
                     startActivity(intent);
+                }
+                else if(position == 2)
+                {
+                    //earn cash
+                    //Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(activity, EarnCashActivity.class);
+                    activity.startActivity(intent);
                 }
 
             }

@@ -58,8 +58,8 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorWhite"
+                android:layout_height="40dp"
+                android:background="@drawable/round_corners_white"
                 android:layout_marginBottom="20dp">
 
                 <EditText
@@ -70,15 +70,15 @@
                     android:inputType="text"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:background="@color/colorWhite"
+                    android:background="@drawable/round_corners_white"
                     android:paddingLeft="10dp"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/colorWhite">
+                android:layout_height="40dp"
+                android:background="@drawable/round_corners_white">
 
                 <EditText
                     android:id="@+id/password"
@@ -88,13 +88,11 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:background="@color/colorWhite"
+                    android:background="@drawable/round_corners_white"
                     android:paddingLeft="10dp"/>
 
 
             </android.support.design.widget.TextInputLayout>
-
-
 
 
             <Button

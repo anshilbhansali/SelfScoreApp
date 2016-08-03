@@ -43,11 +43,6 @@ public class UpdateSecQuestion extends AppCompatActivity {
 
         ImageView back_button = (ImageView) findViewById(R.id.back_button);
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
-        TextView header_view = (TextView) findViewById(R.id.header_card);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)header_view.getLayoutParams();
-        params.setMarginStart(30);
-        header_view.setLayoutParams(params);
-        header_view.setText("Update Security Question");
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override

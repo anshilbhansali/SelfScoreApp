@@ -23,8 +23,6 @@ public class PayBillActivity extends AppCompatActivity {
 
         ImageView back_button = (ImageView) findViewById(R.id.back_button);
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
-        TextView header_view = (TextView) findViewById(R.id.header_card);
-        header_view.setText("Pay Bill");
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +38,29 @@ public class PayBillActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        View paynow_b = findViewById(R.id.paynow_button);
+        paynow_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PayNowActivity.class);
+                intent.putExtra("STATE","PAYNOW");
+                startActivity(intent);
+            }
+        });
+
+        View autopay_b = findViewById(R.id.autopay_button);
+        autopay_b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), PayNowActivity.class);
+                intent.putExtra("STATE","AUTOPAY");
+                startActivity(intent);
+            }
+        });
+
+
 
 
     }

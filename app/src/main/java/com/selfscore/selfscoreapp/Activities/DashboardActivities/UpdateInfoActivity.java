@@ -53,11 +53,6 @@ public class UpdateInfoActivity extends AppCompatActivity {
 
         ImageView back_button = (ImageView) findViewById(R.id.back_button);
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
-        TextView header_view = (TextView) findViewById(R.id.header_card);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)header_view.getLayoutParams();
-        params.setMarginStart(150);
-        header_view.setLayoutParams(params);
-        header_view.setText("Update Info");
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,10 +116,11 @@ public class UpdateInfoActivity extends AppCompatActivity {
         //upload photo
         ImageView upload_photo_b = (ImageView) findViewById(R.id.upload_photobutton);
         userphoto = (ImageView) findViewById(R.id.user_photo);
-        if(model.getUser().getProfilePic() != null)
-            userphoto.setImageBitmap(model.getUser().getProfilePic());
+        bitmap = model.getUser().getProfilePic();
+        if( bitmap != null)
+            userphoto.setImageBitmap(bitmap);
 
-        bitmap = null;
+
 
         upload_photo_b.setOnClickListener(new View.OnClickListener() {
             @Override

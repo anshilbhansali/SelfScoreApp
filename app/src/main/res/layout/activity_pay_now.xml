@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navy20"
+    tools:context="com.selfscore.selfscoreapp.Activities.DashboardActivities.PayNowActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/navy100"
+        android:elevation="5dp"
+        android:id="@+id/_toolbar">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="0dp"
+            android:paddingRight="0dp"
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/back_button"
+                android:layout_marginRight="0dp"
+                android:paddingRight="0dp"
+                android:padding="6dp"
+                android:id="@+id/back_button"
+                android:layout_gravity="left"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="Pay Now"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="89dp"
+                android:gravity="center"
+                android:id="@+id/header_card"
+
+                />
+
+            <!-- empty view -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/sslogo_final"
+                android:layout_marginTop="0dp"
+                android:id="@+id/home_button"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/navy20"
+                android:layout_gravity="center"
+                android:id="@+id/paynow_button">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/paynow_textview"
+                    android:text="Pay now"
+                    android:textSize="18sp"
+                    android:textColor="@color/midnight"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@color/colorWhite"
+                android:layout_gravity="center"
+                android:id="@+id/setupauto_button">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/autopay_textview"
+                    android:text="Set up Auto-Pay"
+                    android:textSize="18sp"
+                    android:textColor="@color/navy20"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/paynowcontent_view"
+                android:visibility="visible">
+
+                <include layout="@layout/content_paynow"></include>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/autopaycontent_view"
+                android:visibility="gone">
+
+                <include layout="@layout/content_autopay"></include>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment notice"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/pumpkin"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/paymentnotice_button"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="CONTINUE"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="25sp"
+            android:background="@drawable/mybutton_yellow"
+            android:id="@+id/continue_button"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/paymentnotice"
+            android:orientation="vertical"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:focusable="true">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Payment Notice"
+                android:textColor="@color/midnight"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_notice_pt1"
+                android:textColor="@color/midnight"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Understand that:"
+                android:textColor="@color/midnight"
+                android:textSize="13sp"
+                android:layout_marginTop="0dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_notice_pt2"
+                android:textColor="@color/midnight"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_notice_pt3"
+                android:textColor="@color/midnight"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_notice_pt4"
+                android:textColor="@color/midnight"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_notice_pt5"
+                android:textColor="@color/midnight"
+                android:textSize="13sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="View the "
+                    android:textColor="@color/midnight"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="15dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACH Payment Agreement"
+                    android:textColor="@color/pumpkin"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="0dp"
+                    android:clickable="true"
+                    android:layout_marginBottom="20dp"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

@@ -31,11 +31,6 @@ public class ChangePassword extends AppCompatActivity {
 
         ImageView back_button = (ImageView) findViewById(R.id.back_button);
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
-        TextView header_view = (TextView) findViewById(R.id.header_card);
-        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)header_view.getLayoutParams();
-        params.setMarginStart(100);
-        header_view.setLayoutParams(params);
-        header_view.setText("Change Password");
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
