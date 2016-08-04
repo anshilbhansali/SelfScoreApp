@@ -42,7 +42,7 @@
                 android:text="Invite Friends"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="68dp"
+                android:layout_marginLeft="63dp"
                 android:gravity="center"
                 android:id="@+id/header_card"
 
@@ -114,9 +114,11 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:hint="Friend's name"
+        android:singleLine="true"
         android:textColorHint="@color/navy20"
         android:textSize="16sp"
-        android:paddingLeft="20dp"/>
+        android:paddingLeft="20dp"
+        android:id="@+id/friends_name"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -127,9 +129,11 @@
         android:hint="Friend's email address"
         android:textColorHint="@color/navy20"
         android:maxLines="1"
+        android:singleLine="true"
         android:textSize="16sp"
         android:paddingLeft="20dp"
-        android:layout_marginTop="5dp"/>
+        android:layout_marginTop="5dp"
+        android:id="@+id/friends_email"/>
 
     <Button
         android:layout_width="wrap_content"

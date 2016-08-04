@@ -40,7 +40,7 @@
                 android:text="Pay Bill"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="86dp"
                 android:gravity="center"
                 android:id="@+id/header_card"
 

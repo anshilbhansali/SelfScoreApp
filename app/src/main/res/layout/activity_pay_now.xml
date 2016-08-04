@@ -42,7 +42,7 @@
                 android:text="Pay Now"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="89dp"
+                android:layout_marginLeft="85dp"
                 android:gravity="center"
                 android:id="@+id/header_card"
 

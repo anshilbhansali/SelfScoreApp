@@ -12,6 +12,7 @@ public class UserInfo {
     private String street_addr_1, street_addr_2, city;
     private String grad_school, grad_fos, undergrad_school, undergrad_fos;
     private Bitmap profile_pic;
+    private String referral_link;
 
 
     public UserInfo()
@@ -29,6 +30,12 @@ public class UserInfo {
         undergrad_school = "UC Berkely";
         undergrad_fos = "BS Computer Science";
         profile_pic = null;
+        referral_link = "selfscore.com/16194";
+    }
+
+    public String getReferral_link()
+    {
+        return this.referral_link;
     }
 
     public void savePhone(String phone1, String phone2, String phone3)

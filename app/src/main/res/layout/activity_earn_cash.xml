@@ -42,7 +42,7 @@
                 android:text="Earn Cash"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="87dp"
+                android:layout_marginLeft="80dp"
                 android:gravity="center"
                 android:id="@+id/header_card"
 
