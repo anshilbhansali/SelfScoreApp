@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.CreditAvailabilityActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.EarnCashActivity;
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.MyPurchasesActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayBillActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayNowActivity;
 import com.selfscore.selfscoreapp.R;
@@ -24,7 +25,7 @@ import com.selfscore.selfscoreapp.R;
  */
 
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class DashBoardViewAdapter extends RecyclerView.Adapter<DashBoardViewAdapter.ViewHolder> {
     private String[] header_names;
     private String[] sub_headers;
     private String[] sub_headers_nums;
@@ -62,6 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
+            //to show appropriate content in each cardview
             if(viewType == 0)
             {
                 //pay bill
@@ -110,6 +112,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         }
 
+        //to set cardview click listeners
         public void setListeners()
         {
             v.setOnClickListener(new View.OnClickListener() {
@@ -136,7 +139,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     }
                     else if (header.equals("My Purchases"))
                     {
-                        Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, MyPurchasesActivity.class);
+                        context.startActivity(intent);
+                        //Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -169,7 +174,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public RecyclerViewAdapter(Context context, String[] header_names, String[] sub_headers, String[] sub_headers_nums, String[] button_text) {
+    public DashBoardViewAdapter(Context context, String[] header_names, String[] sub_headers, String[] sub_headers_nums, String[] button_text) {
         this.header_names = header_names;
         this.sub_headers = sub_headers;
         this.sub_headers_nums = sub_headers_nums;
@@ -184,8 +189,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     // Create new views (invoked by the layout manager)
     @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
-                                                   int viewType) {
+    public DashBoardViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+                                                              int viewType) {
         // create a new view
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.cardview, parent, false);

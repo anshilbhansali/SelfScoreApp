@@ -51,7 +51,15 @@
         <activity android:name=".Activities.DashboardActivities.EarnCashActivity" />
         <activity
             android:name=".Activities.DashboardActivities.InviteFriendsActivity"
-            android:windowSoftInputMode="adjustNothing"></activity>
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Activities.DashboardActivities.MyPurchasesActivity"
+            android:windowSoftInputMode="adjustNothing">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

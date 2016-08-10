@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/my_purchases_row"></include>
+        <include layout="@layout/my_purchases_rows"></include>
 
 
     </LinearLayout>

@@ -2,11 +2,19 @@ package com.selfscore.selfscoreapp.Model;
 
 import android.app.Application;
 import android.database.Observable;
+import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.selfscore.selfscoreapp.R;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
+
+import static java.util.Collections.sort;
 
 /**
  * Created by anshilbhansali on 7/22/16.
@@ -54,6 +62,9 @@ public class Model extends Observable{
             "What is your favourite colour?"
     };
 
+    //Purchases
+    private List<Purchase> myPurchases = new ArrayList<>();
+
     //<------------------------METHODS---------------------------------------->
     public Model(Application app)
     {
@@ -62,9 +73,51 @@ public class Model extends Observable{
         //should get data from servers
 
         addDatatoDrawers();
+        initPurchases();
 
         user = new UserInfo();
     }
+
+    private void initPurchases()
+    {
+
+        Purchase purchase = new Purchase("31", "OCT", "Target", "$20.48");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("20", "OCT", "Walmart", "$201.24");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("19", "OCT", "Trader Joe's", "$124.48");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("18", "OCT", "Deli Cafe", "$24.98");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("17", "OCT", "Target", "$57.48");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("16", "OCT", "Walmart", "$29.48");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("15", "OCT", "Trader Joe's", "$160.48");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("13", "OCT", "Deli Cafe", "$48.78");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("11", "OCT", "Target", "$73.35");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("8", "OCT", "Walgreens", "$20.48");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("5", "OCT", "Walmart", "$201.58");
+        myPurchases.add(purchase);
+
+        purchase = new Purchase("4", "OCT", "Bevmo", "$106.48");
+        myPurchases.add(purchase);
+    }
+
 
     private void addDatatoDrawers()
     {
@@ -113,5 +166,118 @@ public class Model extends Observable{
 
     public UserInfo getUser(){return user;}
 
+    public List<Purchase> getMyPurchases(){return this.myPurchases;}
+
+    public List<Purchase> getFilteredPurchases(String query)
+    {
+        List<Purchase> filteredPurchases = new ArrayList<>();
+
+        for(int i=0;i<myPurchases.size();i++)
+        {
+            Purchase p = myPurchases.get(i);
+
+            if(p.getAmount().contains(query) || p.getPurchaseName().contains(query))
+            {
+                filteredPurchases.add(p);
+            }
+        }
+
+        return filteredPurchases;
+    }
+
+    public List<Purchase> getSortedByAmount()
+    {
+
+        sort(myPurchases, new Comparator<Purchase>() {
+            @Override
+            public int compare(Purchase p1, Purchase p2) {
+
+                String amt1_str = p1.getAmount().split("\\$")[1];
+                int amt1 = Integer.parseInt(amt1_str.split("\\.")[0]);
+
+                String amt2_str = p2.getAmount().split("\\$")[1];
+                int amt2 = Integer.parseInt(amt2_str.split("\\.")[0]);
+
+                return (amt1 - amt2);
+
+            }
+        });
+
+        return myPurchases;
+    }
+
+    public List<Purchase> getSortedByName()
+    {
+        sort(myPurchases, new Comparator<Purchase>() {
+            @Override
+            public int compare(Purchase p1, Purchase p2) {
+                String name1 = p1.getPurchaseName();
+                String name2 = p2.getPurchaseName();
+
+                return name1.compareTo(name2);
+            }
+        });
+
+        return myPurchases;
+    }
+
+    public List<Purchase> getSortedByDate()
+    {
+        sort(myPurchases, new Comparator<Purchase>() {
+            @Override
+            public int compare(Purchase p1, Purchase p2) {
+                String m1 = p1.getMonth();
+                String d1 = p1.getDate();
+
+                String m2 = p2.getMonth();
+                String d2 = p2.getDate();
+
+                int date1 = Integer.parseInt(d1);
+                int date2 = Integer.parseInt(d2);
+
+                int month1 = getMonthNumber(m1);
+                int month2 = getMonthNumber(m2);
+
+                if(month1 == month2)
+                    return (date2-date1);
+
+                return (month2-month1);
+
+            }
+        });
+
+        return myPurchases;
+    }
+
+    private int getMonthNumber(String month)
+    {
+        if(month.equals("JAN"))
+            return 1;
+        if(month.equals("FEB"))
+            return 2;
+        if(month.equals("MAR"))
+            return 3;
+        if(month.equals("APR"))
+            return 4;
+        if(month.equals("MAY"))
+            return 5;
+        if(month.equals("JUN"))
+            return 6;
+        if(month.equals("JUL"))
+            return 7;
+        if(month.equals("AUG"))
+            return 8;
+        if(month.equals("SEP"))
+            return 9;
+        if(month.equals("OCT"))
+            return 10;
+        if(month.equals("NOV"))
+            return 11;
+        if(month.equals("DEC"))
+            return 12;
+
+
+        return 0;
+    }
 
 }

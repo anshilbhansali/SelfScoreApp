@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/navy10"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.selfscore.selfscoreapp.Activities.DashboardActivities.MyPurchasesActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/navy100"
+        android:elevation="5dp"
+        android:id="@+id/_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="0dp"
+            android:paddingRight="0dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/back_button"
+                android:layout_marginRight="0dp"
+                android:paddingRight="0dp"
+                android:padding="6dp"
+                android:id="@+id/back_button"
+                android:layout_gravity="left"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="My Purchases"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="55dp"
+                android:gravity="center"
+                android:id="@+id/header_card"
+
+                />
+
+            <!-- empty view -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/sslogo_final"
+                android:layout_marginTop="0dp"
+                android:id="@+id/home_button"/>
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/search_view"
+            android:queryHint="Enter keyword or amount"
+            android:layout_marginRight="1dp"
+            android:background="@color/colorWhite"
+            android:iconifiedByDefault="false">
+
+
+        </SearchView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="PDF STATEMENTS"
+            android:layout_weight="1.7"
+            android:gravity="center"
+            android:textColor="@color/midnight"
+            android:textSize="15sp"
+            android:background="@color/colorWhite"
+            android:id="@+id/pdf_statements"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#8493ac"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp"
+        android:paddingTop="0dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Date"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:layout_marginTop="0dp"
+            android:paddingTop="6dp"
+            android:id="@+id/date_button"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Description"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:layout_marginLeft="30dp"
+            android:paddingTop="6dp"
+            android:id="@+id/description_button"/>
+
+        <include layout="@layout/empty_view"></include>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Amount"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:paddingTop="6dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:gravity="right"
+            android:id="@+id/amount_button"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_recycler_view">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+
+</LinearLayout>

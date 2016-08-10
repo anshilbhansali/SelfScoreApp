@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.ColorDrawable;
-import android.os.CountDownTimer;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -26,7 +24,7 @@ import com.selfscore.selfscoreapp.Adapters.DrawerItemViewAdapter;
 import com.selfscore.selfscoreapp.Activities.LoginActivities.LoginActivity;
 import com.selfscore.selfscoreapp.Model.Model;
 import com.selfscore.selfscoreapp.R;
-import com.selfscore.selfscoreapp.Adapters.RecyclerViewAdapter;
+import com.selfscore.selfscoreapp.Adapters.DashBoardViewAdapter;
 import com.selfscore.selfscoreapp.Model.RowItem;
 import com.selfscore.selfscoreapp.SelfScoreApplication;
 
@@ -81,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeButtonEnabled(true);
         actionBar.setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.midnight)));
 
-        //<-----------------------------DRAWER SETUP--------------------------------------->
+        //<-----------------------------DRAWER SETUP--------------------------------------------------->
         rowItems_left = model.getLeftRowItems();
         rowItems_right = model.getRightRowItems();
 
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         setDrawerListeners();
         setupDrawerToggle();
 
-        //<-----------------------------RECYCLER VIEW--------------------------------------->
+        //<-----------------------------RECYCLER VIEW (MAIN VIEW)--------------------------------------->
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -102,12 +100,13 @@ public class MainActivity extends AppCompatActivity {
 
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
+
         //connect view to adapter
         header_names = model.getCard_headers();
         sub_headers = model.getCard_subheaders();
         sub_headers_nums = model.getCard_subheader_nums();
         buttons_text = model.getCard_buttons();
-        mAdapter = new RecyclerViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
+        mAdapter = new DashBoardViewAdapter(this, header_names, sub_headers, sub_headers_nums, buttons_text);
         mRecyclerView.setAdapter(mAdapter);
 
 
@@ -153,6 +152,11 @@ public class MainActivity extends AppCompatActivity {
                     //earn cash
                     //Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(activity, EarnCashActivity.class);
+                    activity.startActivity(intent);
+                }
+                else if(position == 3)
+                {
+                    Intent intent = new Intent(activity, MyPurchasesActivity.class);
                     activity.startActivity(intent);
                 }
 
