@@ -188,7 +188,9 @@ public class Model extends Observable{
     public List<Purchase> getSortedByAmount()
     {
 
-        sort(myPurchases, new Comparator<Purchase>() {
+        List<Purchase> sortedPurchases = new ArrayList<>(myPurchases);
+
+        sort(sortedPurchases, new Comparator<Purchase>() {
             @Override
             public int compare(Purchase p1, Purchase p2) {
 
@@ -203,12 +205,14 @@ public class Model extends Observable{
             }
         });
 
-        return myPurchases;
+        return sortedPurchases;
     }
 
     public List<Purchase> getSortedByName()
     {
-        sort(myPurchases, new Comparator<Purchase>() {
+        List<Purchase> sortedPurchases = new ArrayList<>(myPurchases);
+
+        sort(sortedPurchases, new Comparator<Purchase>() {
             @Override
             public int compare(Purchase p1, Purchase p2) {
                 String name1 = p1.getPurchaseName();
@@ -218,12 +222,14 @@ public class Model extends Observable{
             }
         });
 
-        return myPurchases;
+        return sortedPurchases;
     }
 
     public List<Purchase> getSortedByDate()
     {
-        sort(myPurchases, new Comparator<Purchase>() {
+        List<Purchase> sortedPurchases = new ArrayList<>(myPurchases);
+
+        sort(sortedPurchases, new Comparator<Purchase>() {
             @Override
             public int compare(Purchase p1, Purchase p2) {
                 String m1 = p1.getMonth();
@@ -246,7 +252,7 @@ public class Model extends Observable{
             }
         });
 
-        return myPurchases;
+        return sortedPurchases;
     }
 
     private int getMonthNumber(String month)

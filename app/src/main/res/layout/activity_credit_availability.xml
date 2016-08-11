@@ -195,7 +195,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button_text"
+                android:id="@+id/button_incr_cred"
                 android:layout_width="260dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"

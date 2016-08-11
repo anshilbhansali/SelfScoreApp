@@ -8,9 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.R;
 
@@ -64,8 +66,14 @@ public class CreditAvailabilityActivity extends AppCompatActivity {
             }
         });
 
-
-
+        //INCREASE CREDIT
+        Button increase_button = (Button) findViewById(R.id.button_incr_cred);
+        increase_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "work in progress", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

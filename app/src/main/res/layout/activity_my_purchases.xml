@@ -110,43 +110,95 @@
         android:orientation="horizontal"
         android:layout_marginTop="0dp"
         android:paddingTop="0dp"
-        android:paddingLeft="15dp"
+        android:paddingLeft="10dp"
         android:paddingRight="5dp">
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Date"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:layout_marginTop="0dp"
-            android:paddingTop="6dp"
-            android:id="@+id/date_button"/>
+            android:orientation="horizontal"
+            android:id="@+id/date_button">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Date"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:layout_marginTop="0dp"
+                android:paddingTop="6dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="▼"
+                android:textColor="@color/colorWhite"
+                android:paddingTop="9dp"
+                android:layout_marginLeft="2dp"
+                android:rotation="0"
+                android:id="@+id/arrow_down1"/>
+
+        </LinearLayout>
 
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Description"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:layout_marginLeft="30dp"
-            android:paddingTop="6dp"
-            android:id="@+id/description_button"/>
+            android:orientation="horizontal"
+            android:id="@+id/description_button">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Description"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:layout_marginLeft="25dp"
+                android:paddingTop="6dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="▼"
+                android:textColor="@color/colorWhite"
+                android:paddingTop="9dp"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/arrow_down2"/>
+
+        </LinearLayout>
 
         <include layout="@layout/empty_view"></include>
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Amount"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp"
-            android:paddingTop="6dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="0dp"
-            android:gravity="right"
-            android:id="@+id/amount_button"/>
+            android:id="@+id/amount_button">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Amount"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:paddingTop="6dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:gravity="right"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="▼"
+                android:textColor="@color/colorWhite"
+                android:paddingTop="9dp"
+                android:layout_marginLeft="2dp"
+                android:id="@+id/arrow_down3"/>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

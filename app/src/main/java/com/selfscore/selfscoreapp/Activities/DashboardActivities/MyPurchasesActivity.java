@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -13,8 +14,12 @@ import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.Adapters.PurchasesAdapter;
 import com.selfscore.selfscoreapp.Model.Model;
+import com.selfscore.selfscoreapp.Model.Purchase;
 import com.selfscore.selfscoreapp.R;
 import com.selfscore.selfscoreapp.SelfScoreApplication;
+
+import java.util.Collections;
+import java.util.List;
 
 public class MyPurchasesActivity extends AppCompatActivity {
 
@@ -26,6 +31,8 @@ public class MyPurchasesActivity extends AppCompatActivity {
 
     private SearchView searchView;
     private View date_button, descr_button, amount_button;
+    private View arrow1, arrow2, arrow3;
+    private boolean date_flag, descr_flag, amount_flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +60,10 @@ public class MyPurchasesActivity extends AppCompatActivity {
         descr_button = findViewById(R.id.description_button);
         amount_button = findViewById(R.id.amount_button);
 
+        arrow1 = date_button.findViewById(R.id.arrow_down1);
+        arrow2 = descr_button.findViewById(R.id.arrow_down2);
+        arrow3 = amount_button.findViewById(R.id.arrow_down3);
+
         configureSort();
 
 
@@ -60,10 +71,42 @@ public class MyPurchasesActivity extends AppCompatActivity {
 
     private void configureSort()
     {
+        arrow1.setVisibility(View.VISIBLE);
+        arrow2.setVisibility(View.INVISIBLE);
+        arrow3.setVisibility(View.INVISIBLE);
+
+        date_flag = false;
+        descr_flag = false;
+        amount_flag = false;
+
         date_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PurchasesAdapter sortedPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), model.getSortedByDate());
+
+                //display arrow
+                arrow1.setVisibility(View.VISIBLE);
+                arrow2.setVisibility(View.INVISIBLE);
+                arrow3.setVisibility(View.INVISIBLE);
+
+                //set to default state
+                descr_flag = false;
+                amount_flag = false;
+
+                //for toggle and reverse the list
+                List<Purchase> sortedbyDate = model.getSortedByDate();
+                if(date_flag)
+                {
+                    Log.v("DATE FLAG: ", "TRUE");
+                    Collections.reverse(sortedbyDate);
+                    date_flag = false;
+                }
+                else
+                {
+                    Log.v("DATE FLAG: ", "FALSE");
+                    date_flag = true;
+                }
+
+                PurchasesAdapter sortedPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), sortedbyDate);
                 mRecyclerView.setAdapter(sortedPurchasesAdapter);
             }
         });
@@ -71,7 +114,29 @@ public class MyPurchasesActivity extends AppCompatActivity {
         descr_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PurchasesAdapter sortedPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), model.getSortedByName());
+
+                arrow2.setVisibility(View.VISIBLE);
+                arrow1.setVisibility(View.INVISIBLE);
+                arrow3.setVisibility(View.INVISIBLE);
+
+                //set to default state
+                date_flag = false;
+                amount_flag = false;
+
+                List<Purchase> sortedbyName = model.getSortedByName();
+                if(descr_flag)
+                {
+                    Log.v("DATE FLAG: ", "TRUE");
+                    Collections.reverse(sortedbyName);
+                    descr_flag = false;
+                }
+                else
+                {
+                    Log.v("DATE FLAG: ", "FALSE");
+                    descr_flag = true;
+                }
+
+                PurchasesAdapter sortedPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), sortedbyName);
                 mRecyclerView.setAdapter(sortedPurchasesAdapter);
             }
         });
@@ -79,7 +144,29 @@ public class MyPurchasesActivity extends AppCompatActivity {
         amount_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PurchasesAdapter sortedPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), model.getSortedByAmount());
+
+                arrow3.setVisibility(View.VISIBLE);
+                arrow1.setVisibility(View.INVISIBLE);
+                arrow2.setVisibility(View.INVISIBLE);
+
+                //set to default state
+                date_flag = false;
+                descr_flag = false;
+
+                List<Purchase> sortedbyAmount = model.getSortedByAmount();
+                if(amount_flag)
+                {
+                    Log.v("DATE FLAG: ", "TRUE");
+                    Collections.reverse(sortedbyAmount);
+                    amount_flag = false;
+                }
+                else
+                {
+                    Log.v("DATE FLAG: ", "FALSE");
+                    amount_flag = true;
+                }
+
+                PurchasesAdapter sortedPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), sortedbyAmount);
                 mRecyclerView.setAdapter(sortedPurchasesAdapter);
             }
         });
