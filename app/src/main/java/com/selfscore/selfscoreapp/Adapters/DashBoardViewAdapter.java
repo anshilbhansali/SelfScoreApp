@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.CreditAvailabilityActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.EarnCashActivity;
+import com.selfscore.selfscoreapp.Activities.DashboardActivities.IncreaseCreditActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.MyPurchasesActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayBillActivity;
 import com.selfscore.selfscoreapp.Activities.DashboardActivities.PayNowActivity;
@@ -157,7 +158,8 @@ public class DashBoardViewAdapter extends RecyclerView.Adapter<DashBoardViewAdap
                     }
                     else if(button_text.equals("INCREASE CREDIT"))
                     {
-                        Toast.makeText(context, "work in progress", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, IncreaseCreditActivity.class);
+                        context.startActivity(intent);
                     }
                     else if(button_text.equals("INVITE FRIENDS"))
                     {

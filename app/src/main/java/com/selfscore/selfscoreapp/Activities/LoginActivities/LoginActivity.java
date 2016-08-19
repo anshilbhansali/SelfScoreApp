@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity{
         mUserNameView = (EditText) findViewById(R.id.username);
         mPasswordView = (EditText) findViewById(R.id.password);
         mLoginFormView = findViewById(R.id.login_form);
-        mLoginFormView.requestFocus();
+        //mLoginFormView.requestFocus();
         mProgressView = findViewById(R.id.login_progress);
         activity = this;
 

@@ -48,6 +48,7 @@ public class CreditAvailabilityActivity extends AppCompatActivity {
 
         //POP UP BOX
         ImageView info_popup = (ImageView) findViewById(R.id.info_popup);
+        View mainView = findViewById(R.id.scroll_view);
         final View popup = findViewById(R.id.pop_up);
         View close_b = popup.findViewById(R.id.close_popup);
         popup.setVisibility(View.GONE);
@@ -65,13 +66,26 @@ public class CreditAvailabilityActivity extends AppCompatActivity {
                 popup.setVisibility(View.GONE);
             }
         });
+        popup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popup.setVisibility(View.GONE);
+            }
+        });
+        mainView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popup.setVisibility(View.GONE);
+            }
+        });
 
         //INCREASE CREDIT
         Button increase_button = (Button) findViewById(R.id.button_incr_cred);
         increase_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "work in progress", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), IncreaseCreditActivity.class);
+                startActivity(intent);
             }
         });
 

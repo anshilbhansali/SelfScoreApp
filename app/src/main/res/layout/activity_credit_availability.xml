@@ -45,7 +45,7 @@
                 android:text="Credit Availability"
                 android:textSize="20sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="58dp"
+                android:layout_marginLeft="45dp"
                 android:gravity="center"
                 android:id="@+id/header_card"
 
@@ -81,7 +81,8 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="0dp">
+            android:layout_marginTop="0dp"
+            android:id="@+id/scroll_view">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -217,18 +218,19 @@
 
         <!--POP UP BOX-->
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="0dp"
-            android:paddingLeft="1dp"
+            android:paddingTop="130dp"
+            android:paddingLeft="0dp"
             android:paddingRight="0dp"
             android:id="@+id/pop_up"
-            android:clipToPadding="false"
-            >
+            android:visibility="visible">
 
             <include layout="@layout/info_popup"></include>
+
         </LinearLayout>
 
     </RelativeLayout>

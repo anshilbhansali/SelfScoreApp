@@ -2,6 +2,7 @@ package com.selfscore.selfscoreapp.Activities.LoginActivities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -29,6 +30,10 @@ public class QuestionAuthenticationActivity extends AppCompatActivity {
     //Activity
     Activity activity;
 
+    //Views
+    private View mProgressView;
+    private View mLoginFormView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,9 @@ public class QuestionAuthenticationActivity extends AppCompatActivity {
         sec_question = (TextView) findViewById(R.id.sec_question);
         sec_answer = (EditText) findViewById(R.id.sec_answer);
         continue_button = (Button) findViewById(R.id.continue_button);
+        mLoginFormView = findViewById(R.id.login_form);
+        mLoginFormView.requestFocus();
+        mProgressView = findViewById(R.id.login_progress);
 
         model = ((SelfScoreApplication) this.getApplication()).getModel();
 
@@ -58,15 +66,48 @@ public class QuestionAuthenticationActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Intent intent = new Intent(activity, MainActivity.class);
-                    intent.putExtra("ACTIVITY_NAME", "Login");
-                    startActivity(intent);
+                    showProgress();
+
+                    new AsyncTask<Void, Void, Void>() {
+                        @Override
+                        protected Void doInBackground(Void... params) {
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+
+
+                            Intent intent = new Intent(activity, MainActivity.class);
+                            intent.putExtra("ACTIVITY_NAME", "Login");
+                            startActivity(intent);
+
+                            super.onPostExecute(aVoid);
+                        }
+                    }.execute();
+
+
                 }
 
             }
         });
 
+    }
 
+    private void showProgress()
+    {
+        mLoginFormView.setVisibility(View.GONE);
+        mProgressView.setVisibility(View.VISIBLE);
+    }
 
+    private void notShowProgress()
+    {
+        mLoginFormView.setVisibility(View.VISIBLE);
+        mProgressView.setVisibility(View.GONE);
     }
 }

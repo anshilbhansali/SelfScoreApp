@@ -64,8 +64,14 @@ public class PurchasesAdapter extends RecyclerView.Adapter<PurchasesAdapter.View
         String name = myPurchases.get(position).getPurchaseName();
         String amt = myPurchases.get(position).getAmount();
 
+        int d = Integer.parseInt(date);
+
+        if(d<10)//one digit, add space to center it
+            holder.purchase_date.setText(" "+date);
+        else
+            holder.purchase_date.setText(date);
+
         holder.purchase_month.setText(month);
-        holder.purchase_date.setText(date);
         holder.purchase_text.setText(name);
         holder.purchase_num.setText(amt);
 

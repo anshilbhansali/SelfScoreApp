@@ -65,6 +65,9 @@ public class Model extends Observable{
     //Purchases
     private List<Purchase> myPurchases = new ArrayList<>();
 
+    //Debit cards
+    private List<DebitCard> myCards = new ArrayList<>();
+
     //<------------------------METHODS---------------------------------------->
     public Model(Application app)
     {
@@ -74,8 +77,15 @@ public class Model extends Observable{
 
         addDatatoDrawers();
         initPurchases();
+        initDebitCards();
 
         user = new UserInfo();
+    }
+
+    private void initDebitCards()
+    {
+        DebitCard debitCard = new DebitCard();
+        myCards.add(debitCard);
     }
 
     private void initPurchases()
@@ -284,6 +294,62 @@ public class Model extends Observable{
 
 
         return 0;
+    }
+
+    public List<Purchase> getFilteredByDates(int d1, int d2, int m1, int m2, int y1, int y2)
+    {
+        List<Purchase> filteredP = new ArrayList<>();
+
+        for(int i=0;i<myPurchases.size();i++)
+        {
+            Purchase p = myPurchases.get(i);
+            int curr_d = Integer.parseInt(p.getDate());
+            int curr_m = getMonthNumber(p.getMonth());
+
+            //System.out.println("Curr :" + p.getMonth()+"/"+p.getDate());
+            //System.out.println("D1 :" + m1+"/"+d1);
+            //System.out.println("D2 :" + m2+"/"+d2);
+
+            if(isAfter(curr_d,curr_m, d1, m1) && isBefore(curr_d,curr_m, d2, m2))
+            {
+                //Log.v("ADDED ", String.valueOf(i));
+                filteredP.add(p);
+            }
+        }
+
+        return filteredP;
+    }
+
+    //return true if date1 is after date2
+    private boolean isAfter(int d1, int m1, int d2, int m2)
+    {
+        if(m1 > m2)
+            return true;
+        if(m1 == m2 && d1 >= d2)
+            return true;
+
+
+        return false;
+    }
+
+    //return true if date1 is before date2
+    private boolean isBefore(int d1, int m1, int d2, int m2)
+    {
+        if(m1 < m2)
+            return true;
+        if(m1 == m2 && d1 <= d2)
+            return true;
+
+        return false;
+    }
+
+    public void addDebitCard(DebitCard debitCard) { myCards.add(debitCard);}
+
+    public List<DebitCard> getDebitCards(){return this.myCards;}
+
+    public void removeDebitCard(int pos)
+    {
+        myCards.remove(pos);
     }
 
 }

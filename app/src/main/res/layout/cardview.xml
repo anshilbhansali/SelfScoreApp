@@ -12,11 +12,11 @@
     android:id="@+id/card_view"
     android:layout_gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="260dp"
+    android:layout_height="265dp"
     card_view:cardCornerRadius="4dp"
 
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
         <!-- To center it^^  -->
 
 

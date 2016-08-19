@@ -56,10 +56,13 @@
             android:name=".Activities.DashboardActivities.MyPurchasesActivity"
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>
-                <action android:name="android.intent.action.SEARCH"/>
+                <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-
         </activity>
+        <activity android:name=".Activities.DashboardActivities.IncreaseCreditActivity" />
+        <activity android:name=".Activities.DashboardActivities.AllPaymentsActivity" />
+        <activity android:name=".Activities.DashboardActivities.PaymentMethod" />
+        <activity android:name=".Activities.DashboardActivities.AddDebitCard"></activity>
     </application>
 
 </manifest>

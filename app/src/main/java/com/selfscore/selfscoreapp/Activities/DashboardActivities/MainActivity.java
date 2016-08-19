@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
     //model
     Model model;
 
+    //flag
+    private Boolean back_flag = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,8 +70,16 @@ public class MainActivity extends AppCompatActivity {
         //get Model data
         model = ((SelfScoreApplication) this.getApplication()).getModel();
         Bundle extras = getIntent().getExtras();
-        if(extras != null && extras.get("ACTIVITY_NAME").equals("Login"))
-            Toast.makeText(MainActivity.this, "Welcome "+model.getUsername(), Toast.LENGTH_LONG).show();
+        if(extras != null)
+        {
+            if(extras.get("ACTIVITY_NAME").equals("Login"))
+            {
+                Toast.makeText(MainActivity.this, "Welcome "+model.getUsername(), Toast.LENGTH_LONG).show();
+                back_flag = true;
+            }
+
+        }
+
 
         //<-----------------------------TOOLBAR SETUP--------------------------------------->
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
@@ -259,4 +270,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+
+        super.onBackPressed();
+    }
 }

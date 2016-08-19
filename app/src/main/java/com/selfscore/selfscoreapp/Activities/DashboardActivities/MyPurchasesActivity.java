@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.Adapters.PurchasesAdapter;
@@ -33,6 +37,9 @@ public class MyPurchasesActivity extends AppCompatActivity {
     private View date_button, descr_button, amount_button;
     private View arrow1, arrow2, arrow3;
     private boolean date_flag, descr_flag, amount_flag;
+
+    private EditText date1, date2;
+    private View dates_show, dates_close;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +74,143 @@ public class MyPurchasesActivity extends AppCompatActivity {
         configureSort();
 
 
+        date1 = (EditText) findViewById(R.id.date1);
+        date2 = (EditText) findViewById(R.id.date2);
+
+        dates_show = findViewById(R.id.dates_show);
+        dates_close = findViewById(R.id.dates_close);
+        setUpDatesFilter();
+
     }
+
+    private void setUpDatesFilter()
+    {
+        date1.setVisibility(View.INVISIBLE);
+        date2.setVisibility(View.INVISIBLE);
+        dates_close.setVisibility(View.GONE);
+
+        dates_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //show date range
+                date1.setVisibility(View.VISIBLE);
+                date2.setVisibility(View.VISIBLE);
+                dates_close.setVisibility(View.VISIBLE);
+                date1.setText("");
+                date2.setText("");
+
+                //hide
+                dates_show.setVisibility(View.GONE);
+            }
+        });
+
+        dates_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //hide date range
+                date1.setVisibility(View.INVISIBLE);
+                date2.setVisibility(View.INVISIBLE);
+                dates_close.setVisibility(View.GONE);
+
+                //show
+                dates_show.setVisibility(View.VISIBLE);
+
+                //show normal all purchases
+                mRecyclerView.setAdapter(mAdapter);
+            }
+        });
+
+        setDateListeners();
+
+    }
+
+    private void setDateListeners()
+    {
+        date1.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                Log.v("ACTION ID ", String.valueOf(actionId));
+
+                if(actionId == EditorInfo.IME_ACTION_DONE)
+                {
+                    Log.v("DONE "," DATE1 IS PRESSED");
+
+                    String d = date1.getText().toString();
+                    if(!isValidDateFormat(d))
+                    {
+                        date1.setError("Please enter valid date");
+                    }
+                }
+
+                return false;
+            }
+        });
+
+        date2.setOnEditorActionListener(new EditText.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if(actionId == EditorInfo.IME_ACTION_DONE)
+
+                {
+                    Log.v("DONE ","DATE2 IS PRESSED");
+
+                    String d1 = date1.getText().toString();
+                    String d2 = date2.getText().toString();
+                    if(!isValidDateFormat(d2))
+                    {
+                        date2.setError("Please enter valid date");
+                    }
+
+                    if(isValidDateFormat(d2) && isValidDateFormat(d1))
+                        extractDates(d1, d2);
+
+                }
+
+                return false;
+            }
+        });
+    }
+
+    private void extractDates(String d1, String d2)
+    {
+        Log.v("EXTRACTED 1 ", d1.split("/")[0] + "/ "+ d1.split("/")[1]);
+
+        int day1 = Integer.parseInt(d1.split("/")[1]);
+        int month1 = Integer.parseInt(d1.split("/")[0]);
+        int year1 = Integer.parseInt(d1.split("/")[2]);
+
+        int day2 = Integer.parseInt(d2.split("/")[1]);
+        int month2 = Integer.parseInt(d2.split("/")[0]);
+        int year2 = Integer.parseInt(d2.split("/")[2]);
+
+        extractPurchases(day1, day2, month1, month2, year1, year2);
+
+    }
+
+    private void extractPurchases(int d1, int d2, int m1, int m2, int y1, int y2)
+    {
+        List<Purchase> filteredPurchases = model.getFilteredByDates(d1, d2, m1, m2, y1, y2);
+
+        PurchasesAdapter filteredPurchasesAdapter = new PurchasesAdapter(getApplicationContext(), filteredPurchases);
+        mRecyclerView.setAdapter(filteredPurchasesAdapter);
+
+    }
+
+    private boolean isValidDateFormat(String date)
+    {
+        if(date.isEmpty())
+            return false;
+
+        if(date.split("/").length != 3)
+            return false;
+
+
+        return true;
+    }
+
+
+
 
     private void configureSort()
     {

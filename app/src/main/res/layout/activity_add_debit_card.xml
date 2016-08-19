@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/navy10"
+    tools:context="com.selfscore.selfscoreapp.Activities.DashboardActivities.AddDebitCard">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/navy100"
+        android:elevation="5dp"
+        android:id="@+id/_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="0dp"
+            android:paddingRight="0dp"
+            android:layout_marginTop="5dp"
+            >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/back_button"
+                android:layout_marginRight="0dp"
+                android:paddingRight="0dp"
+                android:padding="6dp"
+                android:id="@+id/back_button"
+                android:layout_gravity="left"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorWhite"
+                android:text="Add Debit Card"
+                android:textSize="20sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="55dp"
+                android:gravity="center"
+                android:id="@+id/header_card"
+
+                />
+
+            <!-- empty view -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="13dp"
+                android:src="@drawable/sslogo_final"
+                android:layout_marginTop="0dp"
+                android:id="@+id/home_button"/>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingTop="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Debit card number"
+                android:textColor="@color/midnight"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:hint="xxxx"
+                    android:inputType="number"
+                    android:padding="7dp"
+                    android:id="@+id/card_num1"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:hint="xxxx"
+                    android:inputType="number"
+                    android:padding="7dp"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/card_num2"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:hint="xxxx"
+                    android:inputType="number"
+                    android:padding="7dp"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/card_num3"/>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:hint="xxxx"
+                    android:inputType="number"
+                    android:padding="7dp"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/card_num4"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expiration Date"
+                android:textColor="@color/midnight"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+
+                <EditText
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:hint="MM"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:id="@+id/exp_date_m"/>
+                <EditText
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:hint="YY"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:padding="7dp"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/exp_date_y"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3 digit security code"
+                android:textColor="@color/midnight"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:gravity="center"
+                android:singleLine="true"
+                android:padding="7dp"
+                android:inputType="number"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/sec_code"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Billing address"
+                android:textColor="@color/midnight"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:hint="Street address"
+                android:padding="7dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/street_addr"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:hint="Apt / Suite / Floor (optional)"
+                android:padding="7dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/floor"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:hint="Zip"
+                android:inputType="number"
+                android:padding="7dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/zip_code"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/mybutton_yellow"
+                android:layout_gravity="center"
+                android:text="Continue"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/continue_button"/>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>

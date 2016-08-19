@@ -6,21 +6,23 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.selfscore.selfscoreapp.R;
 
-public class PayBillActivity extends AppCompatActivity {
+public class IncreaseCreditActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paybill);
+        setContentView(R.layout.activity_increase_credit);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id._toolbar);
         setSupportActionBar(myToolbar);
 
         ImageView back_button = (ImageView) findViewById(R.id.back_button);
         ImageView home_button = (ImageView) findViewById(R.id.home_button);
+
 
         back_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,51 +39,30 @@ public class PayBillActivity extends AppCompatActivity {
             }
         });
 
+        View enable_location = findViewById(R.id.location_access);
+        View add_contacts = findViewById(R.id.add_contacts);
+        View add_bank = findViewById(R.id.add_bank_button);
 
-        View paynow_b = findViewById(R.id.paynow_button);
-        paynow_b.setOnClickListener(new View.OnClickListener() {
+        enable_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PayNowActivity.class);
-                intent.putExtra("STATE","PAYNOW");
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Unable to access location right now", Toast.LENGTH_SHORT).show();
             }
         });
 
-        View autopay_b = findViewById(R.id.autopay_button);
-        autopay_b.setOnClickListener(new View.OnClickListener() {
+        add_contacts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PayNowActivity.class);
-                intent.putExtra("STATE","AUTOPAY");
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Unable to add contacts right now", Toast.LENGTH_SHORT).show();
             }
         });
 
-        View incr_lim = findViewById(R.id.incr_limit);
-        incr_lim.setOnClickListener(new View.OnClickListener() {
+        add_bank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), IncreaseCreditActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(), "Unable to add bank right now", Toast.LENGTH_SHORT).show();
             }
         });
-
-        View allpayments = findViewById(R.id.all_payments);
-        allpayments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AllPaymentsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
 
     }
-
-
-
-
-
 }

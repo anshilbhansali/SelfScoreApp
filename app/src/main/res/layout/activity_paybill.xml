@@ -90,7 +90,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15$"
+                android:text="$15"
                 android:textSize="25sp"
                 android:layout_marginTop="0dp"
                 android:layout_marginLeft="0dp"
@@ -148,7 +148,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15$"
+                android:text="$15"
                 android:layout_gravity="right"
                 android:textColor="@color/midnight"
                 android:textStyle="bold"
@@ -180,7 +180,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="350$"
+                android:text="$350"
                 android:layout_gravity="right"
                 android:textColor="@color/midnight"
                 android:textStyle="bold"
@@ -212,7 +212,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="400$"
+                android:text="$400"
                 android:layout_gravity="right"
                 android:textColor="@color/midnight"
                 android:textStyle="bold"
@@ -245,7 +245,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="100$"
+                android:text="$100"
                 android:layout_gravity="right"
                 android:textColor="@color/midnight"
                 android:textStyle="bold"
@@ -277,7 +277,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="500$"
+                android:text="$500"
                 android:layout_gravity="right"
                 android:textColor="@color/midnight"
                 android:textStyle="bold"
@@ -306,7 +306,8 @@
                 android:layout_marginLeft="50dp"
                 android:layout_gravity="right"
                 android:textColor="#feb200"
-                android:layout_marginRight="55dp"/>
+                android:layout_marginRight="55dp"
+                android:id="@+id/incr_limit"/>
 
 
         </LinearLayout>
@@ -378,7 +379,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="130dp"
+            android:id="@+id/all_payments">
 
 
             <TextView
@@ -386,7 +389,7 @@
                 android:layout_height="wrap_content"
                 android:text="View all payments"
                 android:layout_gravity="center"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="0dp"
                 android:textColor="#feb200" />
 
             <TextView

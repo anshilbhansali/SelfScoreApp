@@ -99,21 +99,7 @@ public class PayNowActivity extends AppCompatActivity {
             paynow_button.callOnClick();
 
         //select payment method
-        View select_pay_method = findViewById(R.id.select_pay_method);
-        View select_pay_method2 = findViewById(R.id.payment_method2);
-        select_pay_method.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Payment methods are not ready yet!", Toast.LENGTH_SHORT).show();
-            }
-        });
-        select_pay_method2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Payment methods are not ready yet!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        setUpSelectPay();
 
 
         //continue button
@@ -128,6 +114,35 @@ public class PayNowActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void setUpSelectPay()
+    {
+        TextView select_pay_method = (TextView) findViewById(R.id.select_pay_method);
+        TextView select_pay_method2 = (TextView) findViewById(R.id.payment_method2);
+        select_pay_method.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Payment methods are not ready yet!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), PaymentMethod.class);
+                startActivity(intent);
+            }
+        });
+        select_pay_method2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Payment methods are not ready yet!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), PaymentMethod.class);
+                startActivity(intent);
+            }
+        });
+
+        Intent intent = getIntent();
+        if(intent.hasExtra("METHOD_NAME"))
+        {
+            select_pay_method.setText((String)intent.getExtras().get("METHOD_NAME"));
+            select_pay_method2.setText((String)intent.getExtras().get("METHOD_NAME"));
+        }
     }
 
     private void setClickListeners()
