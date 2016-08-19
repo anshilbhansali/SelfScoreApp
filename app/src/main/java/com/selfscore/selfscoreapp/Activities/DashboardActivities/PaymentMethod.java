@@ -23,6 +23,8 @@ public class PaymentMethod extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    private boolean back_flag = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +73,7 @@ public class PaymentMethod extends AppCompatActivity {
         if(intent.hasExtra("REMOVE_CARD"))
         {
             model.removeDebitCard((int) intent.getExtras().get("REMOVE_CARD"));
+            back_flag = true;
         }
 
         DebitCardsAdapter adapter = new DebitCardsAdapter(this, model.getDebitCards());
@@ -114,6 +117,15 @@ public class PaymentMethod extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
 
+        if(back_flag)
+        {
+            Intent intent = new Intent(getApplicationContext(), PayNowActivity.class);
+            startActivity(intent);
+        }
 
+        super.onBackPressed();
+    }
 }

@@ -78,7 +78,8 @@ public class DebitCardsAdapter extends RecyclerView.Adapter<DebitCardsAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         String last4 = myCards.get(position).getCardnum4();
-        holder.name.setText("xxxx-xxxx-xxxx-"+last4);
+        String name = myCards.get(position).getName();
+        holder.name.setText(name +" x-"+last4);
 
     }
 

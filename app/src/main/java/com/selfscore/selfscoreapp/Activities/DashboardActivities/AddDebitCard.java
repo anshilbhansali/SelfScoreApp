@@ -73,6 +73,9 @@ public class AddDebitCard extends AppCompatActivity {
         EditText floor = (EditText) findViewById(R.id.floor);
         EditText zipCode = (EditText) findViewById(R.id.zip_code);
 
+        EditText nameAccount = (EditText) findViewById(R.id.name_account);
+
+        nameAccount.setError(null);
         cardNum1.setError(null);
         cardNum2.setError(null);
         cardNum3.setError(null);
@@ -121,7 +124,13 @@ public class AddDebitCard extends AppCompatActivity {
         appt = floor.getText().toString();
         zip = zipCode.getText().toString();
 
-        DebitCard debitCard = new DebitCard(cardnum1, cardnum2, cardnum3, cardnum4, expmonth, expyear, sec, streetaddr, appt, zip);
+        String name;
+        if(checkEmpty(nameAccount))
+            return;
+
+        name = nameAccount.getText().toString();
+
+        DebitCard debitCard = new DebitCard(name, cardnum1, cardnum2, cardnum3, cardnum4, expmonth, expyear, sec, streetaddr, appt, zip);
         model.addDebitCard(debitCard);
 
         Intent intent = new Intent(getApplicationContext(), PaymentMethod.class);
